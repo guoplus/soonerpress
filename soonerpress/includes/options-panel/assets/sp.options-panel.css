@@ -1,0 +1,33 @@
+
+
+#toplevel_page_options_panel .wp-first-item { display: none; }
+
+.sp-wrap {
+	font-family: 'Arial', 'Tahoma';
+}
+
+#sp-options-panel-wrap {
+	width: 800px;
+	background: #f5f5f5 none; border: 1px solid #ccc; border-radius: 10px;
+}
+#sp-options-panel-header {
+	padding: 15px; text-align: right;
+	background: #eee none; border-bottom: 1px solid #ddd; border-radius: 10px 10px 0 0;
+}
+#sp-options-panel-footer {
+	padding: 15px; text-align: right;
+	background: #eee none; border-top: 1px solid #ddd; border-radius: 0 0 10px 10px;
+}
+#sp-options-panel-tabs { float: left; width: 199px; margin: 0; }
+	#sp-options-panel-tabs li { margin: 0; border-top: 1px solid #fff; border-bottom: 1px solid #ddd; border-right: 1px solid #fff; }
+		#sp-options-panel-tabs a { display: block; padding: 10px; text-decoration: none; outline: none; }
+		#sp-options-panel-tabs a:hover { background: #f5f5f5 none; }
+#sp-options-panel-boxes { float: left; width: 600px; margin: 0; background: #fff none; border-left: 1px solid #ddd; }
+	#sp-options-panel-boxes li { padding: 15px; }
+		.sp-op-en { padding-bottom: 15px; border-bottom: 1px solid #eee; margin-bottom: 15px; }
+		.sp-op-en-t-title h3 { font-size: large; margin: 5px 0; }
+		.sp-op-en-t-info { color: #999; }
+		.sp-op-en-t-info p:last-child { margin-bottom: 0; }
+			.sp-op-en-name { float: left; width: 150px; }
+			.sp-op-en-desc { width: 150px; }
+
