@@ -1,0 +1,15 @@
+
+
+.sp-pm-box-wrap .sp-cm-one { margin-top: 15px; margin-bottom: 15px; }
+	.sp-pm-box-wrap .sp-cm-one-name { display: block; margin: 5px 0; font-size: 13px; font-weight: bold; }
+	.sp-pm-box-wrap .sp-cm-one-field { display: block; }
+	.sp-pm-box-wrap .sp-cm-one-desc { display: block; color: gray; font-size: 11px; margin: 5px 0; font-style: italic; }
+	.sp-pm-box-wrap .sp-btn-addnew { margin-top: 5px; }
+.sp-pm-box-wrap .sp-cm-one:last { margin-bottom: 0; }
+
+.sp-pm-box-wrap .sp-cm-one-t-text input[type='text'] { width: 80%; }
+.sp-pm-box-wrap .sp-cm-one-t-textarea textarea { width: 80%; min-height: 100px; resize: vertical; }
+
+.sp-pm-box-wrap .sp-cm-one-t-group input[type='text'] { width: 80%; }
+.sp-pm-box-wrap .sp-cm-one-t-group textarea { width: 80%; min-height: 80px; resize: vertical; }
+
