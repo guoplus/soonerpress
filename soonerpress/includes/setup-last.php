@@ -1,7 +1,7 @@
 <?php
 
 
-// title no defined (SEO module)
+// title not defined (SEO module)
 if( ! has_filter( 'wp_head', 'sp_title_output' ) ) {
 
 	function sp_title_output() {

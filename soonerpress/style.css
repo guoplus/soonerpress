@@ -1,14 +1,10 @@
 /*
 Theme Name: SoonerPress
 Theme URI: http://www.soonerpress.com/
-Description: A powerful theme framework of WordPress.
-Author: Deep Develop
-Author URI: http://www.deepdevelop.com/
+Description: The most powerful WordPress development framework.
+Author: the SoonerPress team
+Author URI: http://www.soonerpress.com/
 Version: 1.0.0
-Tags: 
-
-License: GNU General Public License, version 2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
@@ -33,9 +29,19 @@ blockquote:before, blockquote:after,q:before, q:after { content: ''; content: no
 
 /* ========== Code ========== */
 
-
+#header, #main, #footer {
+	width: 960px; margin-left: auto; margin-right: auto;
+}
 
 /* ========== WordPress Elements (required) ========== */
 
+.alignleft { float: left; }
+.alignright { float: right; }
+.aligncenter { text-align: center; }
 
+.wp-caption {}
+.wp-caption-text {}
+.sticky {}
+.gallery-caption {}
+.bypostauthor {}
 

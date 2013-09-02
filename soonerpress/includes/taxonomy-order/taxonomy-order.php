@@ -3,7 +3,7 @@
 Plugin Name: Category Order and Taxonomy Terms Order
 Plugin URI: http://www.nsp-code.com
 Description: Category Order and Taxonomy Terms Order
-Version: 1.3.0
+Version: 1.3.4
 Author: Nsp-Code
 Author URI: http://www.nsp-code.com
 Author Email: electronice_delphi@yahoo.com
@@ -13,49 +13,51 @@ Author Email: electronice_delphi@yahoo.com
 // define('TOPATH',    plugin_dir_path(__FILE__));
 // define('TOURL',     plugins_url('', __FILE__));
 
-define('TOPATH',    SP_INCLUDES . '/taxonomy-order');
-define('TOURL',     SP_INCLUDES_URI . '/taxonomy-order');
+define('TOPATH',    SP_INCLUDES.'/taxonomy-order');
+define('TOURL',     SP_INCLUDES_URI.'/taxonomy-order');
 
-load_plugin_textdomain('to', FALSE, TOPATH. "/lang/");
-
-register_deactivation_hook(__FILE__, 'TO_deactivated');
+// register_deactivation_hook(__FILE__, 'TO_deactivated');
 // register_activation_hook(__FILE__, 'TO_activated');
 
-add_action( 'after_setup_theme', 'TO_activated' );
-
-function TO_activated() 
-    {
-        global $wpdb;
+// function TO_activated() 
+//     {
+//         global $wpdb;
         
-        //check if the menu_order column exists;
-        $query = "SHOW COLUMNS FROM $wpdb->terms 
-                    LIKE 'term_order'";
-        $result = $wpdb->query($query);
+//         //check if the menu_order column exists;
+//         $query = "SHOW COLUMNS FROM $wpdb->terms 
+//                     LIKE 'term_order'";
+//         $result = $wpdb->query($query);
         
-        if ($result == 0)
-            {
-                $query = "ALTER TABLE $wpdb->terms ADD `term_order` INT( 4 ) NULL DEFAULT '0'";
-                $result = $wpdb->query($query); 
-            }
+//         if ($result == 0)
+//             {
+//                 $query = "ALTER TABLE $wpdb->terms ADD `term_order` INT( 4 ) NULL DEFAULT '0'";
+//                 $result = $wpdb->query($query); 
+//             }
             
-        //make sure the vars are set as default
-        $options = get_option('tto_options');
-        if (!isset($options['autosort']))
-            $options['autosort'] = '1';
+//         //make sure the vars are set as default
+//         $options = get_option('tto_options');
+//         if (!isset($options['autosort']))
+//             $options['autosort'] = '1';
             
-        if (!isset($options['adminsort']))
-            $options['adminsort'] = '1';
+//         if (!isset($options['adminsort']))
+//             $options['adminsort'] = '1';
             
-        if (!isset($options['level']))
-            $options['level'] = 8;
+//         if (!isset($options['level']))
+//             $options['level'] = 8;
             
-        update_option('tto_options', $options);
-    }
+//         update_option('tto_options', $options);
+//     }
     
-function TO_deactivated() 
-    {
+// function TO_deactivated() 
+//     {
         
-    }
+//     }
+    
+// add_action( 'plugins_loaded', 'to_load_textdomain'); 
+// function to_load_textdomain() 
+//     {
+//         load_plugin_textdomain('to', FALSE, dirname( plugin_basename( __FILE__ ) ) . '/lang');
+//     }
     
 add_action('admin_print_scripts', 'TO_admin_scripts');
 function TO_admin_scripts()
@@ -85,8 +87,8 @@ function TOPluginMenu()
         include (TOPATH . '/include/interface.php');
         include (TOPATH . '/include/terms_walker.php');
         
-        include (TOPATH . '/include/options.php'); 
-        add_options_page('Taxonomy Terms Order', '<img class="menu_pto" src="'. TOURL .'/images/menu-icon.gif" alt="" />Taxonomy Terms Order', 'manage_options', 'to-options', 'to_plugin_options');
+        // include (TOPATH . '/include/options.php'); 
+        // add_options_page('Taxonomy Terms Order', '<img class="menu_pto" src="'. TOURL .'/images/menu-icon.gif" alt="" />' . __('Taxonomy Terms Order', 'to'), 'manage_options', 'to-options', 'to_plugin_options');
                 
         $options = get_option('tto_options');
         
@@ -112,9 +114,9 @@ function TOPluginMenu()
                     continue;                
                 
                 if ($post_type == 'post')
-                            add_submenu_page('edit.php', 'Taxonomy Order', 'Taxonomy Order', 'level_'.$options['level'], 'to-interface-'.$post_type, 'TOPluginInterface' );
+                            add_submenu_page('edit.php', __('Taxonomy Order', 'to'), __('Taxonomy Order', 'to'), 'level_'.$options['level'], 'to-interface-'.$post_type, 'TOPluginInterface' );
                             else
-                            add_submenu_page('edit.php?post_type='.$post_type, 'Taxonomy Order', 'Taxonomy Order', 'level_'.$options['level'], 'to-interface-'.$post_type, 'TOPluginInterface' );
+                            add_submenu_page('edit.php?post_type='.$post_type, __('Taxonomy Order', 'to'), __('Taxonomy Order', 'to'), 'level_'.$options['level'], 'to-interface-'.$post_type, 'TOPluginInterface' );
             }
     }
     
@@ -122,29 +124,29 @@ function TOPluginMenu()
 add_action( 'wp_ajax_update-custom-type-order-hierarchical', array(&$this, 'saveAjaxOrderHierarchical') );
     
 
-function TO_applyorderfilter($orderby, $args)
-    {
-	    $options = get_option('tto_options');
+// function TO_applyorderfilter($orderby, $args)
+//     {
+// 	    $options = get_option('tto_options');
         
-        //if admin make sure use the admin setting
-        if (is_admin())
-            {
-                if ($options['adminsort'] == "1")
-                    return 't.term_order';
+//         //if admin make sure use the admin setting
+//         if (is_admin())
+//             {
+//                 if ($options['adminsort'] == "1")
+//                     return 't.term_order';
                     
-                return $orderby;    
-            }
+//                 return $orderby;    
+//             }
         
-        //if autosort, then force the menu_order
-        if ($options['autosort'] == 1)
-            {
-                return 't.term_order';
-            }
+//         //if autosort, then force the menu_order
+//         if ($options['autosort'] == 1)
+//             {
+//                 return 't.term_order';
+//             }
             
-        return $orderby; 
-    }
+//         return $orderby; 
+//     }
 
-add_filter('get_terms_orderby', 'TO_applyorderfilter', 10, 2);
+// add_filter('get_terms_orderby', 'TO_applyorderfilter', 10, 2);
 
 add_filter('get_terms_orderby', 'TO_get_terms_orderby', 1, 2);
 function TO_get_terms_orderby($orderby, $args)

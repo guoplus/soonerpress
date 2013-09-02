@@ -18,6 +18,7 @@
                 <div class="icon32" id="icon-edit"><br></div>
                 <h2><?php _e( "Taxonomy Order", 'to' ) ?></h2>
 
+<?php /*
                 <div id="cpt_info_box">
                     <div id="p_right"> 
                         
@@ -53,6 +54,8 @@
                     <h4><?php _e( "Did you know there is available a more advanced version of this plug-in?", 'to' ) ?> <a target="_blank" href="http://www.nsp-code.com/premium-plugins/wordpress-plugins/advanced-taxonomy-terms-order/"><?php _e( "Read more", 'to' ) ?></a></h4>
                     <p><?php _e( "Check our", 'to' ) ?> <a target="_blank" href="http://wordpress.org/extend/plugins/post-types-order/">Post Types Order</a> <?php _e( "plugin which allow to custom sort all posts, pages, custom post types", 'to' ) ?> </p>
                 </div>
+*/ ?>
+
                 <div id="ajax-response"></div>
                 
                 <noscript>

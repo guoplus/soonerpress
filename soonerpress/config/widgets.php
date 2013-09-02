@@ -4,8 +4,8 @@
 /** Widget: Sample Widget */
 class SP_widget_sample extends WP_Widget {
 
-	function SP_widget_sample() {
-		parent::__construct( false, __( 'Sample Widget', 'sp' ), array( 'description' => __( 'A sample widget.', 'sp' ) ) );
+	function __construct() {
+		parent::__construct( 'sample-widget', __( 'Sample Widget', 'sp' ), array( 'description' => __( 'A sample widget.', 'sp' ) ) );
 	}
 
 	function widget( $args, $instance ) {
@@ -26,8 +26,8 @@ class SP_widget_sample extends WP_Widget {
 	function form( $instance ) {
 		$instance = wp_parse_args( $instance, array( 'title' => 'Sample Title', 'param' => 'value', ) );
 		?>
-			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label><input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php esc_attr_e( $instance['title'] ); ?>" /></p>
-			<p><label for="<?php echo $this->get_field_id('param'); ?>"><?php _e('Param Name:'); ?></label><input class="widefat" id="<?php echo $this->get_field_id('param'); ?>" name="<?php echo $this->get_field_name('param'); ?>" type="text" value="<?php esc_attr_e( $instance['param'] ); ?>" /></p>
+			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label><input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" /></p>
+			<p><label for="<?php echo $this->get_field_id('param'); ?>"><?php _e('Param Name:'); ?></label><input class="widefat" id="<?php echo $this->get_field_id('param'); ?>" name="<?php echo $this->get_field_name('param'); ?>" type="text" value="<?php echo esc_attr( $instance['param'] ); ?>" /></p>
 		<?php
 	}
 
@@ -46,7 +46,19 @@ add_action( 'widgets_init', 'sp_register_widgets' );
 /** Unregister Widgets */
 function sp_unregister_widgets() {
 
-	unregister_widget( 'WP_Widget_Links' );
+	// unregister_widget( 'WP_Widget_Pages' );            // Pages Widget
+	// unregister_widget( 'WP_Widget_Calendar' );         // Calendar Widget
+	// unregister_widget( 'WP_Widget_Archives' );         // Archives Widget
+	// unregister_widget( 'WP_Widget_Links' );            // Links Widget
+	// unregister_widget( 'WP_Widget_Meta' );             // Meta Widget
+	// unregister_widget( 'WP_Widget_Search' );           // Search Widget
+	// unregister_widget( 'WP_Widget_Text' );             // Text Widget
+	// unregister_widget( 'WP_Widget_Categories' );       // Categories Widget
+	// unregister_widget( 'WP_Widget_Recent_Posts' );     // Recent Posts Widget
+	// unregister_widget( 'WP_Widget_Recent_Comments' );  // Recent Comments Widget
+	// unregister_widget( 'WP_Widget_RSS' );              // RSS Widget
+	// unregister_widget( 'WP_Widget_Tag_Cloud' );        // Tag Cloud Widget
+	// unregister_widget( 'WP_Nav_Menu_Widget' );         // Menus Widget
 
 }
 add_action( 'widgets_init', 'sp_unregister_widgets' );

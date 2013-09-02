@@ -4,7 +4,7 @@
 global $sp_config;
 
 $sp_config['menus'] = array(
-	'main-nav' => __( 'Main Navigation Menu', 'sp' ),
-	'foot-nav' => __( 'Footer Navigation Menu', 'sp' ),
+	'main-menu' => __( 'Main Navigation Menu', 'sp' ),
+	'foot-menu' => __( 'Footer Navigation Menu', 'sp' ),
 );
 

@@ -1,103 +1,121 @@
 <?php
 
 
-/** Init Post Custom Metadata */
-function sp_init_post_custom_meta() {
+if( is_admin() ) {
 
-	add_pm_box(
-		'box-post-1',
-		'post',
-		'Meta Box 1 Title',
-		array(
+	global $sp_config;
+
+	// type_slide
+	$sp_config['post-custom-meta']['boxes'][] = array(
+		'id' => 'box-slide-1',
+		'cond' => array(
+			'post_type' => array( 'type_slide' ),
+		),
+		'title' => __( 'Slide Properties', 'sp' ),
+		'fields' => array(
 			array(
-				'id' => 'slug_pm0',
-				'title' => 'Title',
-				'desc' => 'Description',
-				'type' => 'text',
-				'display_column' => true,
-				'display_column_callback' => '__' ),
+				'id' => 'slide_title',
+				'title' => __( 'Slide Title', 'sp' ),
+				'desc' => __( 'Display on the right of the slide.', 'sp' ),
+				'type' => 'text' ),
 			array(
-				'id' => 'slug_pm1',
-				'title' => 'Title',
-				'desc' => 'Description',
-				'type' => 'upload',
-				'multiple' => true ),
+				'id' => 'slide_description',
+				'title' => __( 'Slide Content', 'sp' ),
+				'desc' => __( 'Display on the right of the slide.', 'sp' ),
+				'type' => 'wysiwyg' ),
 			array(
-				'id' => 'slug_pm2',
-				'title' => 'Title',
-				'desc' => 'Description',
-				'multiple' => true,
-				'title_single' => 'Single Title',
-				'fields' => array(
-						array(
-							'id' => 'slug_pm2a',
-							'title' => 'Title',
-							'desc' => 'Description',
-							'type' => 'text' ),
-						array(
-							'id' => 'slug_pm2b',
-							'title' => 'Title',
-							'desc' => 'Description',
-							'type' => 'upload',
-							'multiple' => true ),
+				'id' => 'slide_image',
+				'title' => __( 'Slide Image', 'sp' ),
+				'desc' => __( 'Image size: 960 × 240 (pixels).', 'sp' ),
+				'type' => 'image' ),
+		)
+	);
+
+	// type_event
+	$sp_config['post-custom-meta']['boxes'][] = array(
+		'id' => 'box-event-1',
+		'cond' => array(
+			'post_type' => array( 'type_event' ),
+		),
+		'title' => __( 'Event Properties', 'sp' ),
+		'fields' => array(
+			array(
+				'id' => 'event_image',
+				'title' => __( 'Event Banner Image', 'sp' ),
+				'desc' => __( 'Image size: 960 × 240 (pixels).', 'sp' ),
+				'type' => 'image' ),
+			array(
+				'id' => 'event_thumb',
+				'title' => __( 'Event Thumbnail Image', 'sp' ),
+				'desc' => __( 'Image size: 128 × 128 (pixels).', 'sp' ),
+				'type' => 'image' ),
+			array(
+				'id' => 'event_date',
+				'title' => __( 'Event Show Date', 'sp' ),
+				'desc' => __( 'A date for show.', 'sp' ),
+				'ml' => false,
+				'type' => 'datepicker' ),
+			array(
+				'id' => 'event_age_limit',
+				'title' => __( 'Event Minimum Age Limit', 'sp' ),
+				'desc' => __( 'The minimum age of the event', 'sp' ),
+				'ml' => false,
+				'type' => 'select',
+				'choices' => array(
+					'16' => '16+', '18' => '18+', '21' => '21+', 
 				) ),
 			array(
-				'id' => 'slug_pm3',
-				'title' => 'Title',
-				'desc' => 'Description',
-				'type' => 'textarea' ),
-			array(
-				'id' => 'slug_pm4',
-				'title' => 'Title',
-				'desc' => 'Description',
-				'type' => 'date' ),
-			array(
-				'id' => 'slug_pm5',
-				'title' => 'Title',
-				'desc' => 'Description',
+				'id' => 'event_info',
+				'title' => __( 'Event Additional Information', 'sp' ),
+				'desc' => __( 'Detail information for the event.', 'sp' ),
 				'type' => 'wysiwyg' ),
+			array(
+				'id' => 'event_links',
+				'title' => __( 'Event Links', 'sp' ),
+				'desc' => __( 'Social links for the event.', 'sp' ),
+				'ml' => false,
+				'multiple' => true,
+				'type' => 'text' ),
 		)
 	);
-	add_pm_box(
-		'box-post-1',
-		'post',
-		'Meta Box 2 Title',
-		array(
+	$sp_config['post-custom-meta']['boxes'][] = array(
+		'id' => 'box-event-2',
+		'cond' => array(
+			'post_type' => array( 'type_event' ),
+		),
+		'title' => __( 'Event Sponsors', 'sp' ),
+		'fields' => array(
 			array(
-				'id' => 'slug_pm6',
-				'title' => 'Title',
-				'desc' => 'Description',
-				'type' => 'select' ),
-			array(
-				'id' => 'slug_pm7',
-				'title' => 'Title',
-				'desc' => 'Description',
-				'type' => 'upload',
-				'multiple' => true ),
-			array(
-				'id' => 'slug_pm8',
-				'title' => 'Title',
-				'desc' => 'Description',
-				'type' => 'wysiwyg' ),
+				'id' => 'event_sponsors',
+				'title' => __( 'Sponsors List', 'sp' ),
+				'desc' => __( 'Add each sponsor here.', 'sp' ),
+				'type' => 'group', // 'multiple' => true <<< can be ignored
+				'single_title' => 'Sponsor',
+				'fields' => array(
+						array(
+							'id' => 'sponsor_name',
+							'title' => __( 'Sponsor Name', 'sp' ),
+							'desc' => __( 'Sponsor name Here.', 'sp' ),
+							'type' => 'text' ),
+						array(
+							'id' => 'sponsor_logo_image',
+							'title' => __( 'Sponsor Logo Image', 'sp' ),
+							'desc' => __( 'Image size: 128 × 128 (pixels).', 'sp' ),
+							'type' => 'image' ),
+						array(
+							'id' => 'sponsor_description',
+							'title' => __( 'Sponsor Description', 'sp' ),
+							'desc' => __( 'Sponsor description Here.', 'sp' ),
+							'type' => 'text' ),
+						array(
+							'id' => 'sponsor_links',
+							'title' => __( 'Sponsor Links', 'sp' ),
+							'desc' => __( 'Enter each sponsor link here.', 'sp' ),
+							'multiple' => true,
+							'type' => 'text' ),
+				) ),
 		)
 	);
-
-/*
-	// using
-	global $post;
-	$meta = get_pm( $post->ID );
-	echo $meta['slug_pm0'];
-	print_r( $meta['slug_pm1'] );
-	print_r( $meta['slug_pm2'] );
-	foreach( $meta['slug_pm2'] as $k => $v ) {
-		echo $v['slug_pm2a'];
-		print_r( $v['slug_pm2b'] );
-	}
-	echo date( DATE_ATOM, strtotime( $meta['slug_pm4'] ) );
-	echo wpautop( $meta['slug_pm5'] );
-	print_r( $meta['slug_pm7'] );
-*/
 
 }
-add_action( 'sp_init_post_custom_meta', 'sp_init_post_custom_meta' );
 

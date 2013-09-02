@@ -36,18 +36,18 @@ function sp_seo_save_post_meta( $post_id ) {
 		return;
 	global $sp_config;
 	$post_type = get_post_type( $post_id );
-	foreach ( $sp_config['seo'][$post_type] as $field ) {
-		if ( isset( $_POST['sp_seo_meta_'.$field] ) ) {
-			if( ! empty( $_POST['sp_seo_meta_'.$field] ) )
-				add_post_meta( $post_id, '_sp_seo_'.$field, $_POST['sp_seo_meta_'.$field], true ) or
-					update_post_meta( $post_id, '_sp_seo_'.$field, $_POST['sp_seo_meta_'.$field] );
-			else
-				delete_post_meta( $post_id, '_sp_seo_'.$field );
+	if( isset( $sp_config['seo'][$post_type] ) )
+		foreach ( $sp_config['seo'][$post_type] as $field ) {
+			if ( isset( $_POST['sp_seo_meta_'.$field] ) ) {
+				if( ! empty( $_POST['sp_seo_meta_'.$field] ) )
+					add_post_meta( $post_id, '_sp_seo_'.$field, $_POST['sp_seo_meta_'.$field], true ) or
+						update_post_meta( $post_id, '_sp_seo_'.$field, $_POST['sp_seo_meta_'.$field] );
+				else
+					delete_post_meta( $post_id, '_sp_seo_'.$field );
+			}
 		}
-	}
 }
 add_action( 'save_post', 'sp_seo_save_post_meta' );
-
 
 function sp_title_output() {
 	$t = $d = $k = '';
