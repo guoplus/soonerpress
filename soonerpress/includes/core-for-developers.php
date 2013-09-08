@@ -2,7 +2,8 @@
 
 
 /** dump an array or object as formatted HTML output */
-function sp_dump( $expression, $echo = true ) {
+if ( ! function_exists( 'dump' ) ) :
+function dump( $expression, $echo = true ) {
 	if ( ini_get('html_errors') ) {
 		$output = '<pre>' . "\n";
 		$output .= htmlspecialchars( print_r( $expression, true ) );
@@ -15,4 +16,5 @@ function sp_dump( $expression, $echo = true ) {
 	else
 		return $output;
 }
+endif;
 

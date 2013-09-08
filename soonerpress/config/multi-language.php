@@ -5,7 +5,7 @@ global $sp_config;
 
 $sp_config['languages'] = array(
 	// sorted enabled-languages
-	'enabled' => array( 'en', 'zh' ),
+	'enabled' => array( 'en', 'zh', 'de' ),
 	// using default language if browser language was unknown
 	'default' => 'en',
 	// language main stored in database `post` table, just for disabling multi-language
@@ -14,6 +14,10 @@ $sp_config['languages'] = array(
 	'detect_browser_language' => true,
 	// URL query style: parameter, rewrite
 	'query_mode' => 'rewrite',
+	// Post type to bind multilanguage, ignore this to bind to all post-types
+	'post_type' => array( 'post', 'page', 'type_slide', 'type_event' ),
+	// taxonomy to bind multilanguage, ignore this to bind to all taxonomies
+	'taxonomy' => array( 'category', 'post_tag' ),
 	// names of languages
 	'names' => array(
 		'ar' => 'العربية',

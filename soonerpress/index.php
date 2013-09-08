@@ -2,7 +2,7 @@
 
 <div id="main">
 
-<?php echo sp_ml_html_languages_tabs(); ?>
+<?php echo sp_ml_html_selector( array( 'type' => 'text' ) ); ?>
 
 <?php if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

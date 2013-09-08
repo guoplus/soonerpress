@@ -1,5 +1,5 @@
 <?php
 
 
-require_once( SP_INCLUDES . '/taxonomy-order/taxonomy-order.php' );
+// require_once( SP_INC . '/taxonomy-order/taxonomy-order.php' );
 

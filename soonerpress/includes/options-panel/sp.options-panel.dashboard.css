@@ -1,0 +1,50 @@
+
+
+/* admin menu */
+
+#toplevel_page_options_panel .wp-first-item { display: none; }
+
+/* panel tabs content */
+
+#sp-options-panel-wrap {
+	background: #f5f5f5 none; border: 1px solid #ccc; border-radius: 10px;
+}
+#sp-options-panel-header {
+	padding: 15px; position: relative;
+	background: #eee none; border-bottom: 1px solid #ddd; border-radius: 10px 10px 0 0;
+}
+#sp-options-panel-footer {
+	padding: 15px; position: relative;
+	background: #eee none; border-top: 1px solid #ddd; border-radius: 0 0 10px 10px;
+}
+	#sp-options-panel-header-ctrl, #sp-options-panel-footer-ctrl { float: right; text-align: right; }
+
+#sp-options-panel-tabs { float: left; width: 200px; min-height: 300px; margin: 0; overflow: hidden; }
+	#sp-options-panel-tabs ul { margin: 0; }
+	#sp-options-panel-tabs li { margin: 0; font-size: 14px; line-height: 20px; color: black;
+			border-top: 1px solid #fff; border-bottom: 1px solid #ddd; border-right: 1px solid #fff; }
+		#sp-options-panel-tabs a { display: block; padding: 10px 12px; color: black; text-decoration: none; outline: none; }
+		#sp-options-panel-tabs a:hover { background: #fff none; }
+		#sp-options-panel-tabs a.current { background: #fff none; }
+		.sp-options-tab-icon { display: inline-block; font-size: 16px; color: black; margin-right: 10px; }
+
+#sp-options-panel-boxes { min-height: 300px; margin: 0 0 0 200px; background: #fff none; border-left: 1px solid #ddd; }
+	#sp-options-panel-boxes ul { margin: 0; }
+	#sp-options-panel-boxes li { margin: 0; padding: 0 15px; }
+	.sp-options-tab > table { border-collapse: collapse; width: 100%; }
+		#sp-options-panel-boxes .sp-cm-one { padding-top: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+		#sp-options-panel-boxes .sp-cm-one:last-child { border-bottom-width: 0; }
+		#sp-options-panel-boxes .sp-cm-one-t-title h3 { font-size: large; margin: 5px 0; }
+		#sp-options-panel-boxes .sp-cm-one-t-info { color: gray; }
+		#sp-options-panel-boxes .sp-cm-one-t-info p:first-child { margin-top: 0; }
+		#sp-options-panel-boxes .sp-cm-one-t-info p:last-child { margin-bottom: 0; }
+			#sp-options-panel-boxes .sp-cm-one-name { width: 180px; padding: 15px 0; text-align: left; }
+				#sp-options-panel-boxes .sp-btn-addnew { margin-top: 5px; }
+			#sp-options-panel-boxes .sp-cm-one-field { padding: 15px 0; }
+				#sp-options-panel-boxes .sp-cm-one-t-text input[type='text'] { min-width: 300px; }
+				#sp-options-panel-boxes .sp-cm-one-t-textarea textarea { min-width: 300px; min-height: 100px; }
+				#sp-options-panel-boxes .sp-cm-one-t-select select,
+				#sp-options-panel-boxes .sp-cm-one-t-pages select { min-width: 200px; }
+				#sp-options-panel-boxes .sp-cm-one-t-select_multi select { min-width: 200px; }
+			#sp-options-panel-boxes .sp-cm-one-desc { display: block; margin-top: 5px; font-style: italic; color: gray; }
+

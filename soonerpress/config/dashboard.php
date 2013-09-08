@@ -26,7 +26,7 @@ $sp_config['dashboard'] = array(
 	'wp-login-header-title'    => get_bloginfo( 'name' ),
 	// Login form logo image
 	'wp-login-header-image'    => array(
-		'src' => SP_IMAGES . '/wp-login-header.png',
+		'src' => SP_IMG . '/wp-login-header.png',
 		'width' => 274, 'height' => 63
 	),
 	// Redirect to specified URL after login

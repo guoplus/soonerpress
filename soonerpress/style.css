@@ -29,6 +29,10 @@ blockquote:before, blockquote:after,q:before, q:after { content: ''; content: no
 
 /* ========== Code ========== */
 
+body {
+	-webkit-text-size-adjust: none;
+}
+
 #header, #main, #footer {
 	width: 960px; margin-left: auto; margin-right: auto;
 }

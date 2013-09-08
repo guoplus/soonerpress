@@ -18,15 +18,14 @@ if ( isset( $sp_config['dashboard']['remove-admin-menu'] ) && $sp_config['dashbo
 
 if ( isset( $sp_config['dashboard']['remove-dashboard-widgets'] ) && $sp_config['dashboard']['remove-dashboard-widgets'] ) {
 	function _sp_dashboard_remove_widgets() {
-		global $wp_meta_boxes;
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts'] );
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'] );
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'] );
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments'] );
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links'] );
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'] );
+		remove_meta_box( 'dashboard_quick_press',     'dashboard', 'side' );
+		remove_meta_box( 'dashboard_recent_drafts',   'dashboard', 'side' );
+		remove_meta_box( 'dashboard_primary',         'dashboard', 'side' );
+		remove_meta_box( 'dashboard_secondary',       'dashboard', 'side' );
+		remove_meta_box( 'dashboard_right_now',       'dashboard', 'normal' );
+		remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+		remove_meta_box( 'dashboard_incoming_links',  'dashboard', 'normal' );
+		remove_meta_box( 'dashboard_plugins',         'dashboard', 'normal' );
 	}
 	add_action( 'wp_dashboard_setup', '_sp_dashboard_remove_widgets' );
 }

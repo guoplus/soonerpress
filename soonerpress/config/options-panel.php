@@ -33,6 +33,7 @@ EOTEXT;
 				'id' => 'site_name', // id stored in database
 				'title' => __( 'Site Name', 'sp' ),
 				'type' => 'text',
+				'placeholder' => __( 'SoonerPress Testing Website', 'sp' ),
 				'desc' => __( 'Enter your website name here.', 'sp' ),
 				'std' => 'Blog', // default value
 			),
@@ -40,6 +41,7 @@ EOTEXT;
 				'id' => 'site_description',
 				'title' => __( 'Site Description', 'sp' ),
 				'type' => 'textarea',
+				'placeholder' => __( 'The most powerful WordPress development framework.', 'sp' ),
 				'desc' => __( 'Enter your website description here.', 'sp' ),
 			),
 			array(
@@ -62,13 +64,44 @@ EOTEXT;
 			array(
 				'id' => 'contactus_pageid',
 				'title' => __( 'Page "Contact Us"', 'sp' ),
-				'type' => 'pages',
+				'type' => 'posts',
+				'field_type' => 'select',
+				'query_vars' => array(
+					'post_type' => 'page',
+					'orderby' => 'post_title',
+					'order' => 'ASC',
+				),
 				'desc' => __( 'Select a page to go.', 'sp' ),
+			),
+			array(
+				'id' => 'pages_enabled_slider',
+				'title' => __( 'Pages to add Slider', 'sp' ),
+				'type' => 'posts',
+				'field_type' => 'selectmulti',
+				'query_vars' => array(
+					'post_type' => 'page',
+					'orderby' => 'post_title',
+					'order' => 'DESC',
+				),
+				'desc' => __( 'Select some pages to go.', 'sp' ),
+			),
+			array(
+				'id' => 'specified_category',
+				'title' => __( 'Specified post category', 'sp' ),
+				'type' => 'taxonomy',
+				'field_type' => 'radio',
+				'taxonomy' => 'category',
+				'get_terms_args' => array(
+					'hide_empty' => false,
+					'orderby' => 'name',
+					'order' => 'ASC',
+				),
+				'desc' => __( 'Select a category to go.', 'sp' ),
 			),
 			array(
 				'id' => 'spokesperson_name',
 				'title' => __( 'Spokesperson', 'sp' ),
-				'type' => 'select_multi',
+				'type' => 'selectmulti',
 				'desc' => __( 'Notice: hold "Ctrl" button and click to select multi choices.', 'sp' ),
 				'choices' => array(
 					'jason' => __( 'Jason', 'sp' ),
@@ -80,6 +113,17 @@ EOTEXT;
 					'freeman' => __( 'Freeman', 'sp' ),
 				),
 				'std' => array( 'bob', 'tom', ),
+			),
+			array(
+				'id' => 'enabled_banner',
+				'title' => __( 'Enabled Banner Pages', 'sp' ),
+				'type' => 'checkbox',
+				'choices' => array(
+					'home' => __( 'Homepage', 'sp' ),
+					'news_single' => __( 'Single News', 'sp' ),
+					'news_archive' => __( 'News Archive', 'sp' ),
+				),
+				'std' => array( 'home', 'news_archive' ),
 			),
 		),
 	);
@@ -132,7 +176,7 @@ EOTEXT;
 				'title' => __( 'Logo', 'sp' ),
 				'type' => 'image',
 				'desc' => 'Upload a main logo image, size: 300 × 60 (pixels).',
-				'std' => SP_IMAGES . '/logo.png',
+				'std' => SP_IMG . '/logo.png',
 			),
 			array(
 				'id' => 'logo_align',
@@ -201,6 +245,16 @@ EOTEXT;
 				'id' => 'my_date',
 				'title' => __( 'Date Picker', 'sp' ),
 				'type' => 'datepicker',
+			),
+			array(
+				'id' => 'my_time',
+				'title' => __( 'Time Picker', 'sp' ),
+				'type' => 'timepicker',
+			),
+			array(
+				'id' => 'my_datetime',
+				'title' => __( 'Datetime Picker', 'sp' ),
+				'type' => 'datetimepicker',
 			),
 			array(
 				'id' => 'my_color',

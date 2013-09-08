@@ -11,8 +11,8 @@ Version: 2.5.7.6
     // define('CPTPATH',   plugin_dir_path(__FILE__));
     // define('CPTURL',    plugins_url('', __FILE__));
 
-    define('CPTPATH',   SP_INCLUDES . '/post-order');
-    define('CPTURL',    SP_INCLUDES_URI . '/post-order');
+    define('CPTPATH',   SP_INC . '/post-order');
+    define('CPTURL',    SP_INC_URI . '/post-order');
 
     define('APTO_VERSION', '2.5.7.6');
     define('APTO_APP_API_URL',      'http://www.nsp-code.com/index.php'); 

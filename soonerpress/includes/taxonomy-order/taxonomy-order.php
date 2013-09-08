@@ -13,8 +13,8 @@ Author Email: electronice_delphi@yahoo.com
 // define('TOPATH',    plugin_dir_path(__FILE__));
 // define('TOURL',     plugins_url('', __FILE__));
 
-define('TOPATH',    SP_INCLUDES.'/taxonomy-order');
-define('TOURL',     SP_INCLUDES_URI.'/taxonomy-order');
+define('TOPATH',    SP_INC.'/taxonomy-order');
+define('TOURL',     SP_INC_URI.'/taxonomy-order');
 
 // register_deactivation_hook(__FILE__, 'TO_deactivated');
 // register_activation_hook(__FILE__, 'TO_activated');

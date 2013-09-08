@@ -6,7 +6,8 @@
 
 	<meta name="format-detection" content="telephone=no" />
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 	<?php wp_head(); ?>
 
@@ -17,7 +18,7 @@
 
 	<div id="header">
 
-		<div id="logo"><a href="<?php echo esc_attr( trailingslashit( home_url() ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><img src="<?php echo esc_attr( SP_IMAGES . '/logo.png' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" /></a></div>
+		<div id="logo"><a href="<?php echo esc_attr( trailingslashit( home_url() ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><img src="<?php echo esc_attr( SP_IMG . '/logo.png' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" /></a></div>
 
 		<?php sp_nav_menu( 'main-menu', 'main-menu', 'main-menu', 1 ); ?>
 
