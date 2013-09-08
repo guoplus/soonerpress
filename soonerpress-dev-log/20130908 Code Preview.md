@@ -30,6 +30,6 @@
 	- Term Custom Meta 和 User Custom Meta 同 Post Custom Meta 存储结构
 - 所有 Custom Meta Field 输出整合到 core 的子模块中，并对代码结构进行封装，便于代码结构管理和性能优化
 - 敲定文件夹名称为 `config`、`includes`、`library`、`assets`、`images`、`languages`
-- Term Meta API 采用普遍流行的 `wp_option` 存储方式（例 Term ID 为 21 的 meta 存储结构为：`wp_option` → `_termmeta_21` = {string|SERIALIZED_DATA}）
+- Term Meta API 采用普遍流行的 `wp_option` 存储方式（例 Term ID 为 21 的 meta 存储结构为：`wp_option` → `_termmeta_21` = `{string|SERIALIZED_DATA}`）
 - WordPress 初始化时本身已对 `$_POST`、`$_GET` 加上反斜杠（即使 PHP 环境设置 magic quotes 关闭），因此 SoonerPress 自有底层功能（如 Term Meta API）时，将无条件使用 WordPress 自带的 `wp_unslash()` 函数对数据处理
 - SoonerPress Docs 敲定全局内容存储采用 Markdown 格式，应用框架暂使用 Daux.io，以后考虑自主开发此类框架，Daux.io 本身功能不足、缺陷不少，同时也将考虑将 Docs 整合到 SoonerPress.com 中（类似 WordPress.org 的应用结构）

@@ -24,13 +24,13 @@ function _sp_tm_term_add_fields( $taxonomy ) {
 				// multi-language is enabled & available
 				foreach ( $sp_config['languages']['enabled'] as $l ) {
 					echo '<div class="sp-cm-one-field-l sp-cm-one-field-l-' . esc_attr( $l ) . '">';
-					_sp_tm_do_entry_html_field( $entry, $l );
+					_sp_tm_do_entry_html_field( $entry, 0, $l );
 					echo '</div>';
 				}
 			} else {
 				// not in multi-language
 				echo '<div class="sp-cm-one-field-content">';
-				_sp_tm_do_entry_html_field( $entry );
+				_sp_tm_do_entry_html_field( $entry, 0 );
 				echo '</div>';
 			}
 			echo '<p class="sp-cm-one-desc">' . $entry['desc'] . '</p>';
@@ -53,13 +53,13 @@ function _sp_tm_term_edit_fields( $term, $taxonomy ) {
 				// multi-language is enabled & available
 				foreach ( $sp_config['languages']['enabled'] as $l ) {
 					echo '<div class="sp-cm-one-field-l sp-cm-one-field-l-' . esc_attr( $l ) . '">';
-					_sp_tm_do_entry_html_field( $entry, $l );
+					_sp_tm_do_entry_html_field( $entry, $term->term_id, $l );
 					echo '</div>';
 				}
 			} else {
 				// not in multi-language
 				echo '<div class="sp-cm-one-field-content">';
-				_sp_tm_do_entry_html_field( $entry );
+				_sp_tm_do_entry_html_field( $entry, $term->term_id );
 				echo '</div>';
 			}
 			echo '<span class="description sp-cm-one-desc">' . $entry['desc'] . '</span></td>';
@@ -68,9 +68,9 @@ function _sp_tm_term_edit_fields( $term, $taxonomy ) {
 	}
 }
 
-function _sp_tm_do_entry_html_field( $entry, $lang = '' ) {
+function _sp_tm_do_entry_html_field( $entry, $term_id, $lang = '' ) {
 	global $sp_config;
-	$value = sp_tm( $term->term_id, $entry['id'] );
+	$value = sp_tm( $term_id, $entry['id'], $lang );
 	if ( false !== $value ) // a {false} will be returned if variable was not set
 		$entry['value'] = $value;
 	$entry['id'] = SP_CUSTOM_META_PREFIX . $entry['id'] .
