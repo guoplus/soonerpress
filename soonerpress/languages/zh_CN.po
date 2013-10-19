@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SoonerPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-04 15:41+0800\n"
+"POT-Creation-Date: 2013-10-19 22:09+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Chong Freeman <chong@vip.163.com>\n"
 "Language-Team: Deep Develop <http://www.deepdevelop.com/>\n"
@@ -15,19 +15,1055 @@ msgstr ""
 "__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;"
 "_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: framework-config.php:40
+#: index.php:10
+msgid "(more&hellip;)"
+msgstr "（更多&hellip;）"
+
+#: index.php:17
+msgid "Sorry, no posts matched your criteria."
+msgstr "抱歉，没有符合条件的文章。"
+
+#: config/breadcrumbs.php:13 includes/breadcrumbs.php:23
+msgid "Home"
+msgstr "首页"
+
+#: config/dashboard.php:20
+msgid "Powered by WordPress."
+msgstr ""
+
+#: config/nav-menus.php:13
 msgid "Main Navigation Menu"
 msgstr "主要导航菜单"
 
-#: framework-config.php:41
+#: config/nav-menus.php:14
 msgid "Footer Navigation Menu"
 msgstr "页底导航菜单"
 
-#: includes/core.php:31
+#: config/options-panel.php:14 config/options-panel.php:15
+#: includes/options-panel.php:23 includes/options-panel.php:24
+msgid "Options Panel"
+msgstr "配置中心"
+
+#: config/options-panel.php:29
+msgid "General"
+msgstr ""
+
+#: config/options-panel.php:33
+msgid "Global"
+msgstr ""
+
+#: config/options-panel.php:37
+msgid "This is the global settings."
+msgstr ""
+
+#: config/options-panel.php:42
+msgid "Site Name"
+msgstr ""
+
+#: config/options-panel.php:44
+msgid "SoonerPress Testing Website"
+msgstr ""
+
+#: config/options-panel.php:45
+msgid "Enter your website name here."
+msgstr ""
+
+#: config/options-panel.php:50
+msgid "Site Description"
+msgstr ""
+
+#: config/options-panel.php:52
+msgid "The most powerful WordPress development framework."
+msgstr ""
+
+#: config/options-panel.php:53
+msgid "Enter your website description here."
+msgstr ""
+
+#: config/options-panel.php:57
+msgid "Site Biography"
+msgstr ""
+
+#: config/options-panel.php:62
+msgid "Site Built Date"
+msgstr ""
+
+#: config/options-panel.php:69
+msgid "List Select"
+msgstr ""
+
+#: config/options-panel.php:74
+msgid "Page \"Contact Us\""
+msgstr ""
+
+#: config/options-panel.php:82
+msgid "Select a page to go."
+msgstr ""
+
+#: config/options-panel.php:86
+msgid "Pages to add Slider"
+msgstr ""
+
+#: config/options-panel.php:94
+msgid "Select some pages to go."
+msgstr ""
+
+#: config/options-panel.php:98
+msgid "Specified post category"
+msgstr ""
+
+#: config/options-panel.php:107
+msgid "Select a category to go."
+msgstr ""
+
+#: config/options-panel.php:111
+msgid "Spokesperson"
+msgstr ""
+
+#: config/options-panel.php:113
+msgid "Notice: hold \"Ctrl\" button and click to select multi choices."
+msgstr ""
+
+#: config/options-panel.php:115
+msgid "Jason"
+msgstr ""
+
+#: config/options-panel.php:116
+msgid "Bob"
+msgstr ""
+
+#: config/options-panel.php:117
+msgid "Joe"
+msgstr ""
+
+#: config/options-panel.php:118
+msgid "Jenny"
+msgstr ""
+
+#: config/options-panel.php:119
+msgid "Tom"
+msgstr ""
+
+#: config/options-panel.php:120
+msgid "Jane"
+msgstr ""
+
+#: config/options-panel.php:121
+msgid "Freeman"
+msgstr ""
+
+#: config/options-panel.php:127
+msgid "Enabled Banner Pages"
+msgstr ""
+
+#: config/options-panel.php:130
+msgid "Homepage"
+msgstr ""
+
+#: config/options-panel.php:131
+msgid "Single News"
+msgstr ""
+
+#: config/options-panel.php:132
+msgid "News Archive"
+msgstr ""
+
+#: config/options-panel.php:139
+msgid "File Upload"
+msgstr ""
+
+#: config/options-panel.php:144
+msgid "File: Readme Document"
+msgstr ""
+
+#: config/options-panel.php:145
+msgid "Please select a .txt file here."
+msgstr ""
+
+#: config/options-panel.php:150
+msgid "Files: Extra Document"
+msgstr ""
+
+#: config/options-panel.php:152
+msgid "File list."
+msgstr ""
+
+#: config/options-panel.php:157
+msgid "Image: Logo"
+msgstr ""
+
+#: config/options-panel.php:159
+msgid "No image size limit."
+msgstr ""
+
+#: config/options-panel.php:163
+msgid "Images: Photo"
+msgstr ""
+
+#: config/options-panel.php:165
+msgid "Images list."
+msgstr ""
+
+#: config/options-panel.php:171
+msgid "Header & Footer"
+msgstr ""
+
+#: config/options-panel.php:175
+msgid "Header"
+msgstr ""
+
+#: config/options-panel.php:179
+msgid "This is the header settings."
+msgstr ""
+
+#: config/options-panel.php:184
+msgid "Logo"
+msgstr ""
+
+#: config/options-panel.php:191
+msgid "Logo Alignment"
+msgstr ""
+
+#: config/options-panel.php:194 config/options-panel.php:219
+msgid "Left"
+msgstr ""
+
+#: config/options-panel.php:195 config/options-panel.php:221
+msgid "Right"
+msgstr ""
+
+#: config/options-panel.php:200
+msgid "Footer"
+msgstr ""
+
+#: config/options-panel.php:204
+msgid "This is the footer settings."
+msgstr ""
+
+#: config/options-panel.php:209
+msgid "Copyright Text"
+msgstr ""
+
+#: config/options-panel.php:216
+msgid "Footer Alignment"
+msgstr ""
+
+#: config/options-panel.php:220
+msgid "Center"
+msgstr ""
+
+#: config/options-panel.php:228
+msgid "Multiple Field"
+msgstr ""
+
+#: config/options-panel.php:233
+msgid "Single text"
+msgstr ""
+
+#: config/options-panel.php:240
+msgid "Single text with default value"
+msgstr ""
+
+#: config/options-panel.php:249
+msgid "Extra Fields"
+msgstr ""
+
+#: config/options-panel.php:254
+msgid "Date Picker"
+msgstr ""
+
+#: config/options-panel.php:259
+msgid "Time Picker"
+msgstr ""
+
+#: config/options-panel.php:264
+msgid "Datetime Picker"
+msgstr ""
+
+#: config/options-panel.php:269
+msgid "Color Selector with title tip"
+msgstr ""
+
+#: config/options-panel.php:272
+msgid "Red"
+msgstr ""
+
+#: config/options-panel.php:273
+msgid "Green"
+msgstr ""
+
+#: config/options-panel.php:274
+msgid "Blue"
+msgstr ""
+
+#: config/options-panel.php:279
+msgid "Color Selector"
+msgstr ""
+
+#: config/options-panel.php:287
+msgid "Color Picker"
+msgstr ""
+
+#: config/options-panel.php:293
+msgid "SEO"
+msgstr ""
+
+#: config/options-panel.php:298
+msgid "Global Title"
+msgstr ""
+
+#: config/options-panel.php:303
+msgid "Global Description"
+msgstr ""
+
+#: config/options-panel.php:308
+msgid "Global Keywords"
+msgstr ""
+
+#: config/post-custom-meta.php:20
+msgid "Slide Properties"
+msgstr ""
+
+#: config/post-custom-meta.php:24
+msgid "Slide Title"
+msgstr ""
+
+#: config/post-custom-meta.php:25 config/post-custom-meta.php:32
+msgid "Display on the right of the slide."
+msgstr ""
+
+#: config/post-custom-meta.php:31
+msgid "Slide Content"
+msgstr ""
+
+#: config/post-custom-meta.php:37
+msgid "Slide Image"
+msgstr ""
+
+#: config/post-custom-meta.php:38 config/post-custom-meta.php:64
+msgid "Image size: 960 × 240 (pixels)."
+msgstr ""
+
+#: config/post-custom-meta.php:44
+msgid "Slide Level"
+msgstr ""
+
+#: config/post-custom-meta.php:45
+msgid "Level of the slide."
+msgstr ""
+
+#: config/post-custom-meta.php:59
+msgid "Event Properties"
+msgstr ""
+
+#: config/post-custom-meta.php:63
+msgid "Event Banner Image"
+msgstr ""
+
+#: config/post-custom-meta.php:69
+msgid "Event Thumbnail Image"
+msgstr ""
+
+#: config/post-custom-meta.php:70 config/post-custom-meta.php:132
+msgid "Image size: 128 × 128 (pixels)."
+msgstr ""
+
+#: config/post-custom-meta.php:75
+msgid "Event Show Date"
+msgstr ""
+
+#: config/post-custom-meta.php:76
+msgid "A date for show."
+msgstr ""
+
+#: config/post-custom-meta.php:82
+msgid "Event Minimum Age Limit"
+msgstr ""
+
+#: config/post-custom-meta.php:83
+msgid "The minimum age of the event"
+msgstr ""
+
+#: config/post-custom-meta.php:93
+msgid "Event Additional Information"
+msgstr ""
+
+#: config/post-custom-meta.php:94
+msgid "Detail information for the event."
+msgstr ""
+
+#: config/post-custom-meta.php:99
+msgid "Event Links"
+msgstr ""
+
+#: config/post-custom-meta.php:100
+msgid "Social links for the event."
+msgstr ""
+
+#: config/post-custom-meta.php:112
+msgid "Event Sponsors"
+msgstr ""
+
+#: config/post-custom-meta.php:116
+msgid "Sponsors List"
+msgstr ""
+
+#: config/post-custom-meta.php:117
+msgid "Add each sponsor here."
+msgstr ""
+
+#: config/post-custom-meta.php:120
+msgid "Sponsor"
+msgstr ""
+
+#: config/post-custom-meta.php:125
+msgid "Sponsor Name"
+msgstr ""
+
+#: config/post-custom-meta.php:126
+msgid "Sponsor name Here."
+msgstr ""
+
+#: config/post-custom-meta.php:131
+msgid "Sponsor Logo Image"
+msgstr ""
+
+#: config/post-custom-meta.php:137
+msgid "Sponsor Description"
+msgstr ""
+
+#: config/post-custom-meta.php:138
+msgid "Sponsor description Here."
+msgstr ""
+
+#: config/post-custom-meta.php:143
+msgid "Sponsor Links"
+msgstr ""
+
+#: config/post-custom-meta.php:144
+msgid "Enter each sponsor link here."
+msgstr ""
+
+#: config/post-types.php:17
+msgctxt "post type general name"
+msgid "Slides"
+msgstr ""
+
+#: config/post-types.php:18
+msgctxt "post type singular name"
+msgid "Slide"
+msgstr ""
+
+#: config/post-types.php:19
+msgid "Main Slider"
+msgstr ""
+
+#: config/post-types.php:20
+msgid "All Slides"
+msgstr ""
+
+#: config/post-types.php:22
+msgid "Add New Slide"
+msgstr ""
+
+#: config/post-types.php:23
+msgid "Edit Slide"
+msgstr ""
+
+#: config/post-types.php:24
+msgid "New Slide"
+msgstr ""
+
+#: config/post-types.php:25
+msgid "View Slide"
+msgstr ""
+
+#: config/post-types.php:26
+msgid "Search Slides"
+msgstr ""
+
+#: config/post-types.php:27
+msgid "No slides found."
+msgstr ""
+
+#: config/post-types.php:28
+msgid "No slides found in Trash."
+msgstr ""
+
+#: config/post-types.php:29
+msgid "Parent Slide"
+msgstr ""
+
+#: config/post-types.php:40
+msgctxt "post type general name"
+msgid "Events"
+msgstr ""
+
+#: config/post-types.php:41
+msgctxt "post type singular name"
+msgid "Event"
+msgstr ""
+
+#: config/post-types.php:42
+msgid "Events"
+msgstr ""
+
+#: config/post-types.php:43
+msgid "All Events"
+msgstr ""
+
+#: config/post-types.php:45
+msgid "Add New Event"
+msgstr ""
+
+#: config/post-types.php:46
+msgid "Edit Event"
+msgstr ""
+
+#: config/post-types.php:47
+msgid "New Event"
+msgstr ""
+
+#: config/post-types.php:48
+msgid "View Event"
+msgstr ""
+
+#: config/post-types.php:49
+msgid "Search Events"
+msgstr ""
+
+#: config/post-types.php:50
+msgid "No events found."
+msgstr ""
+
+#: config/post-types.php:51
+msgid "No events found in Trash."
+msgstr ""
+
+#: config/post-types.php:52
+msgid "Parent Event"
+msgstr ""
+
+#: config/post-types.php:63
+msgctxt "post type general name"
+msgid "News"
+msgstr ""
+
+#: config/post-types.php:64
+msgctxt "post type singular name"
+msgid "News"
+msgstr ""
+
+#: config/post-types.php:65
+msgid "News"
+msgstr ""
+
+#: config/post-types.php:66
+msgid "All News"
+msgstr ""
+
+#: config/post-types.php:68
+msgid "Add New News"
+msgstr ""
+
+#: config/post-types.php:69
+msgid "Edit News"
+msgstr ""
+
+#: config/post-types.php:70
+msgid "New News"
+msgstr ""
+
+#: config/post-types.php:71
+msgid "View News"
+msgstr ""
+
+#: config/post-types.php:72
+msgid "Search News"
+msgstr ""
+
+#: config/post-types.php:73
+msgid "No news found."
+msgstr ""
+
+#: config/post-types.php:74
+msgid "No news found in Trash."
+msgstr ""
+
+#: config/post-types.php:75
+msgid "Parent News"
+msgstr ""
+
+#: config/sidebars.php:14
+msgid "Primary Sidebar"
+msgstr ""
+
+#: config/sidebars.php:16
+msgid "Sidebar 1"
+msgstr ""
+
+#: config/sidebars.php:24
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: config/sidebars.php:26
+msgid "Sidebar 2"
+msgstr ""
+
+#: config/taxonomies.php:20
+msgctxt "taxonomy general name"
+msgid "Features"
+msgstr ""
+
+#: config/taxonomies.php:21
+msgctxt "taxonomy singular name"
+msgid "Feature"
+msgstr ""
+
+#: config/taxonomies.php:22
+msgid "Features"
+msgstr ""
+
+#: config/taxonomies.php:23
+msgid "All Features"
+msgstr ""
+
+#: config/taxonomies.php:24
+msgid "Edit Feature"
+msgstr ""
+
+#: config/taxonomies.php:25
+msgid "View Feature"
+msgstr ""
+
+#: config/taxonomies.php:26
+msgid "Update Feature"
+msgstr ""
+
+#: config/taxonomies.php:27
+msgid "Add New Feature"
+msgstr ""
+
+#: config/taxonomies.php:28
+msgid "New Feature Name"
+msgstr ""
+
+#: config/taxonomies.php:29
+msgid "Parent Feature"
+msgstr ""
+
+#: config/taxonomies.php:30
+msgid "Parent Feature:"
+msgstr ""
+
+#: config/taxonomies.php:31
+msgid "Search Features"
+msgstr ""
+
+#: config/taxonomies.php:32
+msgid "Popular Features"
+msgstr ""
+
+#: config/taxonomies.php:49
+msgctxt "taxonomy general name"
+msgid "Locations"
+msgstr ""
+
+#: config/taxonomies.php:50
+msgctxt "taxonomy singular name"
+msgid "Location"
+msgstr ""
+
+#: config/taxonomies.php:51
+msgid "Locations"
+msgstr ""
+
+#: config/taxonomies.php:52
+msgid "All Locations"
+msgstr ""
+
+#: config/taxonomies.php:53
+msgid "Edit Location"
+msgstr ""
+
+#: config/taxonomies.php:54
+msgid "View Location"
+msgstr ""
+
+#: config/taxonomies.php:55
+msgid "Update Location"
+msgstr ""
+
+#: config/taxonomies.php:56
+msgid "Add New Location"
+msgstr ""
+
+#: config/taxonomies.php:57
+msgid "New Location Name"
+msgstr ""
+
+#: config/taxonomies.php:58
+msgid "Parent Location"
+msgstr ""
+
+#: config/taxonomies.php:59
+msgid "Parent Location:"
+msgstr ""
+
+#: config/taxonomies.php:60
+msgid "Search Locations"
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:19 config/taxonomy-custom-meta.php:44
+msgid "Category Title"
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:20 config/taxonomy-custom-meta.php:45
+msgid "Enter the category title."
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:25
+msgid "Category Thumbnail"
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:26
+msgid "Thumbnail image."
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:31
+msgid "Category Richtext"
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:32
+msgid "Category richtext."
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:50
+msgid "Document: Readme"
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:51
+msgid "Upload a text document here."
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:56
+msgid "Tag Type"
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:57
+msgid "Select a type of tag."
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:60
+msgid "Apple"
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:61
+msgid "Banana"
+msgstr ""
+
+#: config/taxonomy-custom-meta.php:62
+msgid "Orange"
+msgstr ""
+
+#: config/widgets.php:14
+msgid "Sample Widget"
+msgstr ""
+
+#: config/widgets.php:14
+msgid "A sample widget."
+msgstr ""
+
+#: config/widgets.php:35
+msgid "Title:"
+msgstr ""
+
+#: config/widgets.php:36
+msgid "Param Name:"
+msgstr ""
+
+#: includes/breadcrumbs.php:117
+#, php-format
+msgid "Search Results for: %s"
+msgstr "搜索：%s"
+
+#: includes/breadcrumbs.php:123
+#, php-format
+msgid "Author Archives: %s"
+msgstr "作者：%s"
+
+#: includes/breadcrumbs.php:130
+#, php-format
+msgid "%s Archives"
+msgstr "%s 归档"
+
+#: includes/breadcrumbs.php:136
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "日期归档：%s"
+
+#: includes/breadcrumbs.php:142
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "月度归档：%s"
+
+#: includes/breadcrumbs.php:148
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "年度归档：%s"
+
+#: includes/breadcrumbs.php:177
+msgid "Archives"
+msgstr "归档"
+
+#: includes/core-adjacent-post-link.php:319
+msgid "Previous Post"
+msgstr ""
+
+#: includes/core-adjacent-post-link.php:319
+msgid "Next Post"
+msgstr ""
+
+#: includes/core-custom-meta.php:48
+msgid "This field cannot be cloned."
+msgstr ""
+
+#: includes/core-custom-meta.php:52
+msgid "Unknown field type."
+msgstr ""
+
+#: includes/core-custom-meta.php:167 includes/core-custom-meta.php:179
+msgid "No file selected."
+msgstr "未选择文件。"
+
+#: includes/core-custom-meta.php:170 includes/core-custom-meta.php:182
+msgid "Select File"
+msgstr "选择文件"
+
+#: includes/core-custom-meta.php:171 includes/core-custom-meta.php:183
+msgid "Cancel"
+msgstr "取消"
+
+#: includes/core.php:253
+msgid "Add new"
+msgstr "添加新的"
+
+#: includes/core.php:254 includes/multilingual.php:337
+msgid "Delete"
+msgstr "删除"
+
+#: includes/core.php:255
+msgid "Toggle"
+msgstr "展开/收起"
+
+#: includes/core.php:256
+msgid "Toggle All"
+msgstr "展开/收起全部"
+
+#: includes/core.php:257
+msgid "Collapse All"
+msgstr "收起全部"
+
+#: includes/core.php:258
+msgid "Expand All"
+msgstr "展开全部"
+
+#: includes/core.php:259
+msgid "Click to toggle"
+msgstr "点击展开/收起"
+
+#: includes/multilingual.php:298
+msgid "Multilingual Settings"
+msgstr "多语言设置"
+
+#: includes/multilingual.php:298 includes/multilingual.php:546
+msgid "Multilingual"
+msgstr "多语言"
+
+#: includes/multilingual.php:312
+msgid "Languages"
+msgstr "语言"
+
+#: includes/multilingual.php:318 includes/multilingual.php:327
+msgid "Flag"
+msgstr "国旗"
+
+#: includes/multilingual.php:319 includes/multilingual.php:328
+msgid "Name"
+msgstr "名称"
+
+#: includes/multilingual.php:320 includes/multilingual.php:329
+#: includes/post-order.php:30 includes/taxonomy-order.php:27
+msgid "Edit"
+msgstr "编辑"
+
+#: includes/multilingual.php:321 includes/multilingual.php:330
+msgid "Default?"
+msgstr "默认？"
+
+#: includes/multilingual.php:338
+msgid "(Default)"
+msgstr "（默认）"
+
+#: includes/multilingual.php:339
+msgid "Make Default"
+msgstr "启用默认"
+
+#: includes/multilingual.php:345
+msgid "Add Language"
+msgstr "添加语言"
+
+#: includes/multilingual.php:347
+msgid "Language"
+msgstr "语言"
+
+#: includes/multilingual.php:353
+msgid "Select a language here."
+msgstr ""
+
+#: includes/multilingual.php:356
+msgid "Add"
+msgstr "添加"
+
+#: includes/multilingual.php:359
+msgid "Settings"
+msgstr "设置"
+
+#: includes/multilingual.php:364
+msgid "Current Logged User Language"
+msgstr "当前登录用户的语言"
+
+#: includes/multilingual.php:375
+msgid "URL Query Mode"
+msgstr "URL 查询模式"
+
+#: includes/multilingual.php:377
+msgid "URL Parameter"
+msgstr "URL 参数"
+
+#: includes/multilingual.php:379
+msgid "Cookies"
+msgstr "Cookies"
+
+#: includes/multilingual.php:385
+msgid "Auto detect browser language"
+msgstr "自动检测浏览器语言"
+
+#: includes/multilingual.php:387
+msgid "Yes"
+msgstr "是"
+
+#: includes/multilingual.php:388
+msgid "No"
+msgstr "否"
+
+#: includes/multilingual.php:389
+msgid "Using language automatically detected from browser."
+msgstr "使用浏览器设置的语言。"
+
+#: includes/multilingual.php:395
+msgid "Content types to enable multilingual"
+msgstr "启用多语言的内容类型"
+
+#: includes/multilingual.php:406 includes/multilingual.php:427
+msgid "Hold Ctrl to select multi options."
+msgstr "按住 Ctrl 键选择多项。"
+
+#: includes/multilingual.php:412
+msgid "Content categories to enable multilingual"
+msgstr "启用多语言的内容类别"
+
+#: includes/multilingual.php:433
+msgid "WordPress Localization"
+msgstr "WordPress 本地化"
+
+#: includes/multilingual.php:440
+msgid "Download Language: "
+msgstr "下载语言："
+
+#: includes/multilingual.php:446
+msgid "No downloads required."
+msgstr "无需下载。"
+
+#: includes/multilingual.php:457 includes/options-panel.php:77
+#: includes/options-panel.php:112 includes/post-order.php:193
+#: includes/taxonomy-order.php:141
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: includes/multilingual.php:475 includes/options-panel.php:63
+msgid "Options saved."
+msgstr "设置已保存。"
+
+#: includes/multilingual.php:508
+msgid "Downloaded successfully: "
+msgstr "下载成功："
+
+#: includes/multilingual.php:510
+msgid "Download failed: "
+msgstr "下载失败："
+
+#: includes/multilingual.php:552
+msgid "Languages Selector:"
+msgstr "语言选择："
+
+#: includes/multilingual.php:642 includes/multilingual.php:660
+msgid "Languages: "
+msgstr "语言："
+
+#: includes/options-panel.php:78 includes/options-panel.php:113
+msgid "Reset All"
+msgstr "重置全部"
+
+#: includes/options-panel.php:200
+msgid "Are you sure?"
+msgstr "您确定吗？"
+
+#: includes/post-order.php:93 includes/post-order.php:94
+#: includes/taxonomy-order.php:94 includes/taxonomy-order.php:95
+msgid "Re-Order"
+msgstr "排序"
+
+#: includes/post-order.php:140
+msgid "Contents Filter"
+msgstr "内容筛选"
+
+#: includes/post-order.php:145
+msgid "Archive"
+msgstr ""
+
+#: includes/post-order.php:168
+msgid "No terms found."
+msgstr ""
+
+#: includes/post-order.php:176
+msgid "Filter"
+msgstr "筛选"
+
+#: includes/post-order.php:179 includes/taxonomy-order.php:127
+msgid "Re-order Form"
+msgstr "排序"
+
+#: includes/post-order.php:228 includes/taxonomy-order.php:164
+msgid "Re-order data saved."
+msgstr "排序已保存。"
+
+#: includes/seo.php:30
+msgid "SEO Settings"
+msgstr "SEO 设置"
+
+#: includes/setup-first.php:24
 #, php-format
 msgid "Page %s"
 msgstr "第 %s 页"
+
+#~ msgid "Read more &raquo;"
+#~ msgstr "阅读更多 &raquo;"
+
+#, fuzzy
+#~ msgid "Pages"
+#~ msgstr "第 %s 页"

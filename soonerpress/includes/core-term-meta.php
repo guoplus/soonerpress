@@ -1,4 +1,10 @@
 <?php
+/**
+ * Core module API for term meta
+ *
+ * @package SoonerPress
+ * @subpackage Core
+ */
 
 
 function sp_get_term_meta( $term_id, $meta_key ) {
@@ -10,7 +16,7 @@ function sp_update_term_meta( $term_id, $meta_key, $meta_value ) {
 	$meta = get_option( SP_OPTION_TERM_META_PREFIX . $term_id );
 	if( false == $meta ) {
 		$meta = array( $meta_key => wp_unslash( $meta_value ) );
-		return add_option( SP_OPTION_TERM_META_PREFIX . $term_id, $meta, null, 'no' );
+		return add_option( SP_OPTION_TERM_META_PREFIX . $term_id, $meta );
 	}
 	$meta[$meta_key] = wp_unslash( $meta_value );
 	return update_option( SP_OPTION_TERM_META_PREFIX . $term_id, $meta );

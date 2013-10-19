@@ -1,4 +1,10 @@
 <?php
+/**
+ * Shortcodes module configuration
+ *
+ * @package SoonerPress
+ * @subpackage Shortcodes
+ */
 
 
 /** Shortcode: Sample Shortcode */

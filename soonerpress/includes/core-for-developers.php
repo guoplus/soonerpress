@@ -1,4 +1,10 @@
 <?php
+/**
+ * Core module API for developing functions
+ *
+ * @package SoonerPress
+ * @subpackage Core
+ */
 
 
 /** dump an array or object as formatted HTML output */

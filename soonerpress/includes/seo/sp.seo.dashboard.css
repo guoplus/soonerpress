@@ -1,0 +1,8 @@
+
+
+.sp_seo_meta_field {}
+	.sp_seo_meta_field input[type="text"],
+	.sp_seo_meta_field textarea,
+	.sp_seo_meta_field select { width: 100%; box-sizing: border-box;  }
+	.sp_seo_meta_field textarea { resize: vertical; }
+

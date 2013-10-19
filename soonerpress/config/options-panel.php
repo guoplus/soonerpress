@@ -1,23 +1,31 @@
 <?php
+/**
+ * Options Panel module configuration
+ *
+ * @package SoonerPress
+ * @subpackage Options_Panel
+ */
 
 
 if( is_admin() ) {
 
 	global $sp_config;
 
-	$sp_config['options']['show_header'] = true;
-	$sp_config['options']['show_footer'] = true;
-	$sp_config['options']['before_form'] = <<< EOTEXT
+	$sp_config['options-panel']['menu_title'] = __( 'Options Panel', 'sp' );
+	$sp_config['options-panel']['page_title'] = wp_get_theme() . ' ' . __( 'Options Panel', 'sp' );
+	$sp_config['options-panel']['show_header'] = true;
+	$sp_config['options-panel']['show_footer'] = false;
+	$sp_config['options-panel']['before_form'] = <<< EOTEXT
 <h3>Welcome to options panel.</h3>
 <p>This is a description test. Using options panel configuration parameter.</p>
 <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
 EOTEXT;
-	$sp_config['options']['after_form'] = <<< EOTEXT
+	$sp_config['options-panel']['after_form'] = <<< EOTEXT
 <p>"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
 <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
 EOTEXT;
 
-	$sp_config['options']['tabs'][] = array(
+	$sp_config['options-panel']['tabs'][] = array(
 		'title' => __( 'General', 'sp' ), // tab name
 		'icon' => sp_icon_font( 'home' ), // tab icon
 		'fields' => array(
@@ -57,7 +65,7 @@ EOTEXT;
 			),
 		),
 	);
-	$sp_config['options']['tabs'][] = array(
+	$sp_config['options-panel']['tabs'][] = array(
 		'title' => __( 'List Select', 'sp' ),
 		'icon' => sp_icon_font( 'list' ),
 		'fields' => array(
@@ -127,7 +135,7 @@ EOTEXT;
 			),
 		),
 	);
-	$sp_config['options']['tabs'][] = array(
+	$sp_config['options-panel']['tabs'][] = array(
 		'title' => __( 'File Upload', 'sp' ),
 		'icon' => sp_icon_font( 'file' ),
 		'fields' => array(
@@ -159,7 +167,7 @@ EOTEXT;
 			),
 		),
 	);
-	$sp_config['options']['tabs'][] = array(
+	$sp_config['options-panel']['tabs'][] = array(
 		'title' => __( 'Header & Footer', 'sp' ),
 		'icon' => sp_icon_font( 'columns' ),
 		'fields' => array(
@@ -216,7 +224,7 @@ EOTEXT;
 			),
 		),
 	);
-	$sp_config['options']['tabs'][] = array(
+	$sp_config['options-panel']['tabs'][] = array(
 		'title' => __( 'Multiple Field', 'sp' ),
 		'icon' => sp_icon_font( 'list-ol' ),
 		'fields' => array(
@@ -237,7 +245,7 @@ EOTEXT;
 			),
 		),
 	);
-	$sp_config['options']['tabs'][] = array(
+	$sp_config['options-panel']['tabs'][] = array(
 		'title' => __( 'Extra Fields', 'sp' ),
 		'icon' => sp_icon_font( 'lightbulb' ),
 		'fields' => array(
@@ -281,7 +289,7 @@ EOTEXT;
 			),
 		),
 	);
-	$sp_config['options']['tabs'][] = array(
+	$sp_config['options-panel']['tabs'][] = array(
 		'title' => __( 'SEO', 'sp' ),
 		'icon' => sp_icon_font( 'search' ),
 		'fields' => array(

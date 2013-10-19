@@ -1,11 +1,17 @@
 <?php
+/**
+ * Widgets module configuration
+ *
+ * @package SoonerPress
+ * @subpackage Widgets
+ */
 
 
 /** Widget: Sample Widget */
 class SP_widget_sample extends WP_Widget {
 
 	function __construct() {
-		parent::__construct( 'sample-widget', __( 'Sample Widget', 'sp' ), array( 'description' => __( 'A sample widget.', 'sp' ) ) );
+		parent::__construct( 'sample_widget', __( 'Sample Widget', 'sp' ), array( 'description' => __( 'A sample widget.', 'sp' ) ) );
 	}
 
 	function widget( $args, $instance ) {

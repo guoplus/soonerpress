@@ -1,4 +1,10 @@
 <?php
+/**
+ * User Custom Meta module configuration
+ *
+ * @package SoonerPress
+ * @subpackage User_Custom_Meta
+ */
 
 
 if( is_admin() ) {

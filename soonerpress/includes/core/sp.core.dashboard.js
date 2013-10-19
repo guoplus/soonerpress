@@ -6,23 +6,24 @@ $(document).ready( function() {
 
 	// init multiple list sortable
 
+	sortable_args = { 'handle': '.sp-cm-drag:first', axis: 'y' };
+
 	$('.sp-cm-one-field-multiple').each( function() {
-		args = { 'handle': '.sp-cm-drag:first' };
 		if( $(this).children('.sp-cm-one-field-l').length ) {
 			$(this).children('.sp-cm-one-field-l').each( function() {
-				$(this).sortable( args );
+				$(this).sortable( sortable_args );
 			} );
 		} else if( $(this).children('.sp-cm-one-field-content').length ) {
 			$(this).children('.sp-cm-one-field-content').each( function() {
-				$(this).sortable( args );
+				$(this).sortable( sortable_args );
 			} );
 		} else {
-			$(this).sortable( args );
+			$(this).sortable( sortable_args );
 		}
 	} );
 
 	$('.sp-cm-one-field-nest-multiple-content').each( function() {
-		$(this).sortable();
+		$(this).sortable( sortable_args );
 	} );
 
 	// init functional fields
@@ -58,7 +59,7 @@ $(document).ready( function() {
 
 	// add add-new button
 	$('.sp-cm-one-field-multiple, .sp-cm-one-field-nest-multiple')
-		.append('<a href="#" class="button sp-btn-addnew">' + sp_core_text.add_new + '</a>')
+		.append('<a href="#" class="button sp-btn-addnew">' + sp_core_l10n.add_new + '</a>')
 	// bind add-new button event
 	$('.sp-btn-addnew').live( 'click', function(e) {
 		e.preventDefault();
@@ -70,7 +71,7 @@ $(document).ready( function() {
 			$field_def.before(
 				'<div class="sp-cm-multi-one">' +
 				field_def_html +
-				'<a href="#" class="sp-btn-delete" title="' + sp_core_text.delete + '"></a>' +
+				'<a href="#" class="sp-btn-delete" title="' + sp_core_l10n.delete + '"></a>' +
 				'</div>'
 			);
 		// a field-group add-new button
@@ -92,14 +93,14 @@ $(document).ready( function() {
 			$field_def.before(
 				'<div class="sp-cm-multi-one">' +
 				$field_def.html() +
-				'<a href="#" class="sp-btn-delete" title="' + sp_core_text.delete + '"></a>' +
+				'<a href="#" class="sp-btn-delete" title="' + sp_core_l10n.delete + '"></a>' +
 				'</div>'
 			);
 		}
 	} );
 
 	// add delete button
-	$('.sp-cm-multi-one').append('<a href="#" class="sp-btn-delete" title="' + sp_core_text.delete + '"></a>');
+	$('.sp-cm-multi-one').append('<a href="#" class="sp-btn-delete" title="' + sp_core_l10n.delete + '"></a>');
 
 	// bind delete button event
 	$('.sp-btn-delete, .sp-btn-delete-text').live( 'click', function(e) {
@@ -114,18 +115,18 @@ $(document).ready( function() {
 	$('.sp-cm-one-field-multiple .sp-cm-multi-one, .sp-cm-one-field-multiple .sp-cm-multi-one-def')
 		.not('.sp-cm-one-t-group > .sp-cm-one-field-multiple > .sp-cm-one-field-content > .sp-cm-multi-one-def')
 		.not('.sp-cm-one-t-group > .sp-cm-one-field-multiple > .sp-cm-one-field-l > .sp-cm-multi-one-def')
-		.prepend('<span class="sp-cm-drag"></span>');
+		.prepend('<span class="sp-drag-icon sp-cm-drag"></span>');
 
 	// add drag icon, refer name wrap, expand (collapse) switcher and delete button to nested fields group
 	$('.sp-cm-multi-one-singletitle')
-		.prepend('<span class="sp-cm-drag sp-cm-group-drag"></span>')
+		.prepend('<span class="sp-drag-icon sp-cm-drag sp-cm-group-drag"></span>')
 		.append('<span class="sp-cm-multi-one-refer-name"></span>')
-		.append('<div class="ctrl"><a class="button sp-btn-delete-text">' + sp_core_text.delete + '</a>' +
-			'<a class="button sp-btn-exco">' + sp_core_text.toggle + '</a></div>');
+		.append('<div class="ctrl"><a class="button sp-btn-delete-text">' + sp_core_l10n.delete + '</a>' +
+			'<a class="button sp-btn-exco">' + sp_core_l10n.toggle + '</a></div>');
 
 	// add fields group "expand all" ("collapse all") switcher
 	$('.sp-cm-one-t-group .sp-cm-one-field')
-		.append('<span class="ctrl"><a class="button sp-btn-exco-all">' + sp_core_text.collapse_all + '</a></span>');
+		.append('<span class="ctrl"><a class="button sp-btn-exco-all">' + sp_core_l10n.collapse_all + '</a></span>');
 
 	// init and bind single group name referring specified field
 	$('.sp-cm-multi-one-group').each( function() {

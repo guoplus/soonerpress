@@ -1,0 +1,18 @@
+
+
+#sp-to-reorder-warp {}
+	#sp-to-reorder-warp ul { list-style: none; }
+		#sp-to-reorder-warp ul li { padding: 0; margin: 0; }
+		#sp-to-reorder-warp ul li.dragging { background: #ddd none; }
+			.sp-to-reorder-item-info { display: block; line-height: 30px; padding: 0 10px; margin-bottom: 10px; background: #eee none; border: 1px solid #dfdfdf; cursor: move; }
+				.sp-to-drag { margin-left: -5px; }
+			#sp-to-reorder-warp ul li ul { padding-left: 20px; }
+	#sp-to-reorder-warp .ui-sortable-placeholder { background: #eee none; border: 2px dashed #dfdfdf; height: 28px; margin-bottom: 10px; }
+
+	.sp-to-item-title { font-weight: bold; }
+	.sp-to-item-id,
+	.sp-to-item-date,
+	.sp-to-item-editlink { display: inline-block; margin-left: 10px; }
+	.sp-to-item-id,
+	.sp-to-item-date { color: gray; font-style: italic; }
+

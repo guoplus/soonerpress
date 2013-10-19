@@ -1,19 +1,16 @@
 <?php
+/**
+ * Navigation Menus module API
+ *
+ * @package SoonerPress
+ * @subpackage Navigation_Menus
+ */
 
-
-/** register navigation menus */
-function _sp_register_nav_menus() {
-	global $sp_config;
-	if( isset( $sp_config['menus'] ) && sizeof( $sp_config['menus'] ) ) {
-		register_nav_menus( apply_filters( 'sp_menus_config', $sp_config['menus'] ) );
-	}
-}
-add_action( 'init', '_sp_register_nav_menus' );
 
 /** process menu HTML output */
 function sp_nav_menu( $theme_location, $menu_class, $menu_id, $depth, $args_extra = array(), $lang = '' ) {
-	if( empty( $lang ) && sp_enabled_module( 'multi-language' ) )
-		$lang = sp_ml_lang();
+	if( empty( $lang ) && sp_module_enabled( 'multilingual' ) )
+		$lang = sp_lang();
 	$args = $args_extra;
 	$args['theme_location'] = ( empty( $lang ) ? $theme_location : $theme_location . '-' . $lang );
 	$args['menu_class']     = $menu_class;
@@ -22,6 +19,23 @@ function sp_nav_menu( $theme_location, $menu_class, $menu_id, $depth, $args_extr
 	$args = wp_parse_args( $args, array(
 		'container' => false,
 	) );
-	wp_nav_menu( $args );
+	return wp_nav_menu( $args );
 }
+
+
+class SP_Nav_Menus extends SP_Module {
+
+	function __construct() {
+		$this->init( 'nav-menus' );
+		add_action( 'init', array( $this, 'register_nav_menus' ) );
+	}
+
+	function register_nav_menus() {
+		if( sizeof( $this->c ) )
+			register_nav_menus( apply_filters( 'sp_register_nav_menus', $this->c ) );
+	}
+
+}
+
+new SP_Nav_Menus();
 

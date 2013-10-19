@@ -1,9 +1,11 @@
 
 
 .sp-pm-box-wrap .sp-cm-one { margin-top: 15px; margin-bottom: 15px; }
-	.sp-pm-box-wrap .sp-cm-one-name { display: block; margin: 5px 0; font-size: 13px; font-weight: bold; }
+	.sp-pm-box-wrap .sp-cm-one-name { float: left; width: 20%; display: block; margin: 5px 0; font-size: 13px; font-weight: bold; }
 	.sp-pm-box-wrap .sp-cm-one-field { display: block; }
 	.sp-pm-box-wrap .sp-cm-one-desc { display: block; color: gray; font-size: 11px; margin: 5px 0; font-style: italic; }
+	.sp-pm-box-wrap .sp-cm-one-field,
+	.sp-pm-box-wrap .sp-cm-one-desc { float: right; width: 76%; }
 	.sp-pm-box-wrap .sp-btn-addnew { margin-top: 5px; }
 .sp-pm-box-wrap .sp-cm-one:last { margin-bottom: 0; }
 

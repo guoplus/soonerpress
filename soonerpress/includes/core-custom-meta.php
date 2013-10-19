@@ -1,10 +1,17 @@
 <?php
+/**
+ * Core module API for custom meta
+ *
+ * @package SoonerPress
+ * @subpackage Core
+ */
 
 
 $_sp_cm_repeatable_field_types = array( 'text', 'email', 'password', 'textarea', 'file', 'image',
 	'colorpicker', 'datepicker' );
 
-class SP_CM_FIELD {
+
+class SP_CM_Field {
 
 	public function __construct( $options = array() ) {
 		// init passed variables

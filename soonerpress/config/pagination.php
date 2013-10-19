@@ -1,4 +1,10 @@
 <?php
+/**
+ * Pagination module configuration
+ *
+ * @package SoonerPress
+ * @subpackage Pagination
+ */
 
 
 global $sp_config;
@@ -10,6 +16,8 @@ $sp_config['pagination'] = array(
 	'previous'        => ' &lsaquo; ',
 	'next'            => ' &rsaquo; ',
 	'previous_extend' => '...',
-	'next_extend'     => '...'
+	'next_extend'     => '...',
+	'before'          => '<div class="pagination">',
+	'after'           => '</div>',
 );
 

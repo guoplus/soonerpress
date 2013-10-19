@@ -9,11 +9,11 @@
 			.sp-cm-multi-one-singletitle .button { margin-left: 10px; }
 			.sp-cm-multi-one-singletitle .ctrl { position: absolute; right: 15px; top: 0; }
 				.sp-cm-multi-one-refer-name { display: inline-block; margin-left: 10px; color: gray; font-style: italic; }
-		.sp-cm-multi-one-singlecontent { padding: 0 10px 10px; }
-			.sp-cm-multi-one-nested-name { display: block; font-weight: bold; margin-top: 10px; }
+		.sp-cm-multi-one-singlecontent { padding: 0 20px 20px; }
+			.sp-cm-multi-one-nested-name { display: block; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
 	.sp-cm-multi-one-group.closed .sp-cm-multi-one-singlecontent { display: none; }
 
-	.sp-cm-drag { display: inline-block; width: 10px; height: 20px;
+	.sp-drag-icon { display: inline-block; width: 10px; height: 20px;
 		padding: 0 5px; cursor: move; vertical-align: middle;
 		background: transparent url('images/icon-drag.png') center center no-repeat; }
 	.sp-cm-group-drag { padding: 0 10px; }
@@ -28,6 +28,8 @@
 		.sp-media-editor-field .sp-media-editor-filename {}
 		.sp-media-editor-field .sp-btn-media-addnew { margin-left: 5px; }
 		.sp-media-editor-field .sp-btn-media-delete { margin-left: 5px; }
+		.sp-media-editor-field.selected { position: relative; }
+		.sp-media-editor-field.selected .sp-media-editor-preview {}
 	.sp-colorselector-preview { display: inline-block; width: 16px; height: 16px; margin-right: 4px; vertical-align: middle; }
 
 .sp-cm-one-field-multiple {}

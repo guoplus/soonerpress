@@ -1,4 +1,10 @@
 <?php
+/**
+ * Theme Setup module configuration
+ *
+ * @package SoonerPress
+ * @subpackage Theme_Setup
+ */
 
 
 /** configure theme properties */
@@ -11,7 +17,7 @@ function _sp_theme_setup() {
 
 	add_editor_style();
 
-	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'automatic-feed-links', 'woocommerce' );
 
 }
 add_action( 'after_setup_theme', '_sp_theme_setup' );

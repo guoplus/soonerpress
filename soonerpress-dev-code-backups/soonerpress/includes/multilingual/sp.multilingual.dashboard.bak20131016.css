@@ -1,0 +1,80 @@
+
+
+.sp-ml-lang-tabs {}
+
+.sp-ml-lang-tabs a {
+	display: inline-block; margin-right: 10px; outline: none;
+}
+.sp-ml-lang-tabs a:hover { border-color: #666; }
+	.sp-ml-lang-tabs img { display: block; opacity: .35 }
+	.sp-ml-lang-tabs a.current img { opacity: 1; }
+
+/* multilingual admin menu */
+
+.sp-multilingual {}
+
+#sp_ml_opt_langs_list { max-width: 600px; }
+	#sp_ml_opt_langs_list .sp_list_one_tpl { display: none; }
+	#sp_ml_opt_langs_list .lang_one {}
+	#sp_ml_opt_langs_list .lang_one > * { padding-top: 5px; padding-bottom: 5px; vertical-align: middle; }
+	#sp_ml_opt_langs_list .lang_one.enabled { opacity: 1; }
+		#sp_ml_opt_langs_list .lang_flag {}
+		#sp_ml_opt_langs_list .sp_text_default { font-weight: bold; }
+		#sp_ml_opt_langs_list .enabled .btn_lang_one_set_disable,
+		#sp_ml_opt_langs_list .default .sp_text_default,
+		#sp_ml_opt_langs_list .enabled .btn_lang_one_set_default { display: inline-block; }
+		#sp_ml_opt_langs_list .btn_lang_one_set_disable,
+		#sp_ml_opt_langs_list .enabled .btn_lang_one_set_enable,
+		#sp_ml_opt_langs_list .sp_text_default,
+		#sp_ml_opt_langs_list .btn_lang_one_set_default,
+		#sp_ml_opt_langs_list .default .btn_lang_one_set_default { display: none; }
+/*		#sp_ml_opt_langs_list .lang_ctrl_drag { width: 15px; }
+		#sp_ml_opt_langs_list .lang_ctrl_edit { width: 60px; }
+		#sp_ml_opt_langs_list .lang_flag { width: 30px; }
+		#sp_ml_opt_langs_list .lang_name { width: 100px; }
+		#sp_ml_opt_langs_list .lang_ctrl_enable { width: 80px; }
+		#sp_ml_opt_langs_list .lang_ctrl_delete { width: 80px; }
+		#sp_ml_opt_langs_list .lang_ctrl_default { width: 100px; }*/
+
+#lang_edit {}
+	#lang_edit .lang_edit_title_add,
+	#lang_edit .btn_lang_edit_add,
+	#lang_edit.adding .lang_edit_title_edit,
+	#lang_edit.adding .btn_lang_edit_save,
+	#lang_edit.adding .btn_lang_edit_cancel { display: none; }
+	#lang_edit.adding .lang_edit_title_add,
+	#lang_edit.adding .btn_lang_edit_add { display: inline-block; }
+
+/* options panel */
+
+#sp-options-panel-boxes .sp-cm-one-name .sp-ml-lang-tabs { display: block; margin-top: 5px; }
+
+/* post custom meta */
+
+#sp-options-panel-header .sp-ml-lang-tabs,
+#sp-options-panel-footer .sp-ml-lang-tabs { line-height: 24px; }
+.sp-pm-box-wrap .sp-cm-one-name .sp-ml-lang-tabs { display: block; margin-top: 5px; }
+
+/* post edit */
+
+.sp-pe-one-field-post_title-l input[type="text"] {
+	width: 100%; height: 1.7em; margin: 1px 0; padding: 3px 8px;
+	font-size: 1.7em; line-height: 100%;outline: 0;
+}
+.sp-pe-one-field-post_excerpt-l textarea {
+	width: 98%; margin: 0; height: 4em;
+}
+
+#sp-pe-multilingual-selector a { width: 160px; opacity: .5; }
+#sp-pe-multilingual-selector a.current { opacity: 1; }
+
+#title-prompt-text { display: none; }
+
+/* term edit */
+
+.sp-te-multilingual-selector { line-height: normal; }
+	.sp-te-multilingual-selector .sp-ml-lang-tabs { margin-left: 10px; }
+
+.sp-tm-field-one {}
+	.sp-tm-field-one .sp-ml-lang-tabs { display: block; margin-top: 5px; }
+

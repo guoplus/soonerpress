@@ -1,8 +1,13 @@
 <?php
-
+/**
+ * Framework Setup Last
+ *
+ * @package SoonerPress
+ * @subpackage Framework_Environment
+ */
 
 // title not defined (SEO module)
-if( ! has_filter( 'wp_head', 'sp_title_output' ) ) {
+if( ! sp_module_enabled( 'seo' ) ) {
 
 	function sp_title_output() {
 		printf( '<title>%s</title>', sp_title() );

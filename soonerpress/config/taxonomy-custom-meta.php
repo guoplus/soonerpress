@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Taxonomy Custom Meta module configuration
+ *
+ * @package SoonerPress
+ * @subpackage Taxonomy_Custom_Meta
+ */
 
 
 if( is_admin() ) {

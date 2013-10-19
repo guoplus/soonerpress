@@ -1,15 +1,21 @@
 <?php
+/**
+ * Post Custom Meta module configuration
+ *
+ * @package SoonerPress
+ * @subpackage Post_Custom_Meta
+ */
 
 
 if( is_admin() ) {
 
 	global $sp_config;
 
-	// type_slide
+	// slide
 	$sp_config['post-custom-meta']['boxes'][] = array(
 		'id' => 'box-slide-1',
 		'cond' => array(
-			'post_type' => array( 'type_slide' ),
+			'post_type' => array( 'slide' ),
 		),
 		'title' => __( 'Slide Properties', 'sp' ),
 		'fields' => array(
@@ -44,11 +50,11 @@ if( is_admin() ) {
 		)
 	);
 
-	// type_event
+	// event
 	$sp_config['post-custom-meta']['boxes'][] = array(
 		'id' => 'box-event-1',
 		'cond' => array(
-			'post_type' => array( 'type_event' ),
+			'post_type' => array( 'event' ),
 		),
 		'title' => __( 'Event Properties', 'sp' ),
 		'fields' => array(
@@ -101,7 +107,7 @@ if( is_admin() ) {
 	$sp_config['post-custom-meta']['boxes'][] = array(
 		'id' => 'box-event-2',
 		'cond' => array(
-			'post_type' => array( 'type_event' ),
+			'post_type' => array( 'event' ),
 		),
 		'title' => __( 'Event Sponsors', 'sp' ),
 		'fields' => array(

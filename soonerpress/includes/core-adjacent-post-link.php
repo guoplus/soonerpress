@@ -1,4 +1,12 @@
 <?php
+/**
+ * Core module API for adjacent post link
+ *
+ * @package SoonerPress
+ * @subpackage Core
+ */
+
+
 /*
 Plugin Name: Ambrosite Next/Previous Post Link Plus
 Plugin URI: http://www.ambrosite.com/plugins

@@ -1,4 +1,8 @@
 
 
+/* general */
+
+a { outline: none !important; }
+
 .clearfix { clear: both; }
 

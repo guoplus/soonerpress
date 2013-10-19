@@ -1,8 +1,16 @@
 <?php
+/**
+ * Framework Setup First
+ *
+ * @package SoonerPress
+ * @subpackage Framework_Environment
+ */
 
 
 function sp_after_setup_theme() {
+
 	load_theme_textdomain( 'sp', SP_LANG );
+
 }
 add_action( 'after_setup_theme', 'sp_after_setup_theme' );
 

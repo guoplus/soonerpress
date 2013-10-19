@@ -1,4 +1,10 @@
 <?php
+/**
+ * SEO module configuration
+ *
+ * @package SoonerPress
+ * @subpackage SEO
+ */
 
 
 global $sp_config;
