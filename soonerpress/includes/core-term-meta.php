@@ -6,6 +6,8 @@
  * @subpackage Core
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
 
 function sp_get_term_meta( $term_id, $meta_key ) {
 	$meta = get_option( SP_OPTION_TERM_META_PREFIX . $term_id );

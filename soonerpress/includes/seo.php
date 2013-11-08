@@ -6,6 +6,8 @@
  * @subpackage SEO
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
 
 class SP_SEO extends SP_Module {
 

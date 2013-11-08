@@ -1,0 +1,13 @@
+
+
+.sp-tm-field-one {}
+
+	.sp-te-one-field-description-l { display: inline-block; }
+
+	.form-field.sp-cf-one-t-wysiwyg input[type="button"] {
+		width: auto; border-width: 1px;
+	}
+	.form-field.sp-cf-one-t-wysiwyg textarea {
+		width: auto; border-width: 0;
+	}
+

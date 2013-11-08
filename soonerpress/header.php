@@ -18,20 +18,25 @@
 
 	<div id="header">
 
-		<div id="logo"><a href="<?php echo esc_attr( trailingslashit( home_url() ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><img src="<?php echo esc_attr( trailingslashit( SP_IMG ) . 'logo.png' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" /></a></div>
+		<?php $logo_attachment_id = sp_option( 'site_logo', sp_lang() ); $logo_url = wp_get_attachment_url( $logo_attachment_id ); ?>
+		<div id="logo"><a href="<?php echo esc_attr( trailingslashit( home_url() ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><?php if ( ! empty( $logo_url ) ) : ?><img src="<?php echo esc_attr( $logo_url ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" /><?php endif; ?></a></div>
 
-		<?php sp_nav_menu( 'main-menu', 'main-menu', 'main-menu', 3 ); ?>
-
-		<?php if ( sp_module_enabled( 'multilingual' ) ) : ?>
-		<nav id="languages_selector">
-			<?php echo sp_lang_selector( array( 'type' => 'text' ) ); ?>
-		</nav>
+		<?php if ( sp_option( 'show_header_nav' ) ) : ?>
+		<?php sp_nav_menu( 'main-nav', 'nav-menu', 'main-menu', 0 ); ?>
 		<?php endif; ?>
 
-		<?php if ( sp_module_enabled( 'breadcrumbs' ) ) : ?>
-		<nav id="breadcrumbs">
-			<?php sp_breadcrumbs(); ?>
-		</nav>
-		<?php endif; ?>
+		<div id="header_control">
+
+			<?php sp_nav_menu( 'top-nav', 'nav-top', 'top-menu', 0 ); ?>
+
+			<?php if ( sp_module_enabled( 'multilingual' ) ) : ?>
+			<nav id="languages_selector">
+				<?php echo sp_lang_selector( array( 'type' => 'text' ) ); ?>
+			</nav>
+			<?php endif; ?>
+
+		</div>
 
 	</div><!-- #header -->
+
+	<div id="main">

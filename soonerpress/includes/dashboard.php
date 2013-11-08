@@ -6,30 +6,32 @@
  * @subpackage Dashboard
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
 
 class SP_Dashboard extends SP_Module {
 
 	function __construct() {
 		$this->dc = array(
-			'remove-admin-menu'        => array(),
-			'remove-dashboard-widgets' => false,
-			'admin_footer_copyright'   => null,
-			'admin_footer_version'     => null,
-			'wp-login-header-url'      => trailingslashit( home_url() ),
-			'wp-login-header-title'    => get_bloginfo( 'name' ),
-			'wp-login-header-image'    => null,
-			'wp-login-redirect'        => null,
-			'remove-html-head'         => true,
-			'disable-core-updates'     => false,
-			'disable-theme-updates'    => false,
-			'disable-plugin-updates'   => false,
+			'remove-admin-menu-pages'      => array(),
+			'remove-dashboard-widgets'     => false,
+			'admin_footer_copyright'       => null,
+			'admin_footer_version'         => null,
+			'wp-login-header-url'          => trailingslashit( home_url() ),
+			'wp-login-header-title'        => get_bloginfo( 'name' ),
+			'wp-login-header-image'        => null,
+			'wp-login-redirect'            => null,
+			'remove-unnecessary-html-head' => true,
+			'disable-core-updates'         => false,
+			'disable-theme-updates'        => false,
+			'disable-plugin-updates'       => false,
 		);
 		$this->init( 'dashboard' );
 		// enquese assets for WordPress login page
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_assets_wp_login' ), 10 );
-		// remove admin side menu items
-		if ( sizeof( $this->c['remove-admin-menu'] ) )
-			add_action( 'admin_menu', array( $this, 'remove_admin_menus' ) );
+		// remove admin menu pages
+		if ( sizeof( $this->c['remove-admin-menu-pages'] ) )
+			add_action( 'admin_menu', array( $this, 'remove_admin_menu_pages' ) );
 		// remove widgets in dashboard index page
 		if ( false !== $this->c['remove-dashboard-widgets'] ) {
 			add_action( 'wp_dashboard_setup', array( $this, 'remove_widgets' ) );
@@ -54,15 +56,8 @@ class SP_Dashboard extends SP_Module {
 		if ( ! empty( $this->c['wp-login-header-image'] ) )
 			add_action( 'login_enqueue_scripts', array( $this, 'login_headerimage' ) );
 		// remove excess head meta on frontpage
-		if ( false !== $this->c['remove-html-head'] ) {
-			remove_action( 'wp_head', 'feed_links', 2 );
-			remove_action( 'wp_head', 'feed_links_extra', 3 );
-			remove_action( 'wp_head', 'rsd_link' );
-			remove_action( 'wp_head', 'wlwmanifest_link' );
-			remove_action( 'wp_head', 'wp_generator' );
-			remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-			remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-		}
+		if ( false !== $this->c['remove-unnecessary-html-head'] )
+			add_action( 'init', array( $this, 'remove_unnecessary_html_head' ) );
 		// disable WordPress updates for core
 		if ( false !== $this->c['disable-core-updates'] ) {
 			// ver 2.3 to 2.7:
@@ -111,14 +106,9 @@ class SP_Dashboard extends SP_Module {
 		wp_enqueue_style( 'web.wp-login', SP_CSS . '/web.wp-login.css', array(), false, 'all' );
 	}
 
-	function remove_admin_menus() {
-		global $menu;
-		end( $menu );
-		while ( prev( $menu ) ) {
-			$value = explode( ' ', $menu[key( $menu )][0] );
-			if ( in_array( null != $value[0] ? $value[0] : '', $this->c['remove-admin-menu'] ) )
-				unset( $menu[key( $menu )] );
-		}
+	function remove_admin_menu_pages() {
+		foreach ( $this->c['remove-admin-menu-pages'] as $p )
+			remove_menu_page( $p );
 	}
 
 	function remove_widgets() {
@@ -162,6 +152,20 @@ class SP_Dashboard extends SP_Module {
 			$this->c['wp-login-header-image-height']
 		);
 		echo '/* ]]> */</style>';
+	}
+
+	function remove_unnecessary_html_head() {
+		remove_action( 'wp_head', 'feed_links', 2 );
+		remove_action( 'wp_head', 'feed_links_extra', 3 );
+		remove_action( 'wp_head', 'rsd_link' );
+		remove_action( 'wp_head', 'wlwmanifest_link' );
+		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
+		remove_action( 'wp_head', 'wp_generator' );
+		if ( defined( 'WOOCOMMERCE_VERSION' ) ) {
+			remove_action( 'wp_head', 'woocommerce_products_rss_feed' );
+			global $woocommerce;
+			remove_action( 'wp_head', array( $woocommerce, 'generator' ) );
+		}
 	}
 
 }

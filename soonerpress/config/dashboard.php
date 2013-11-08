@@ -6,20 +6,24 @@
  * @subpackage Dashboard
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
+
+/* This is a sample configuration, edit or delete it, then start developing :-) */
 
 global $sp_config;
 
 $sp_config['dashboard'] = array(
-	// Remove non-used admin menu
-	'remove-admin-menu'            => array(  ), // __('Posts'), __('Links'), __('Comments'), __('Tools')
+	// Remove non-used admin menu pages
+	'remove-admin-menu-pages'      => array(),
 	// Remove dashboard widgets
 	'remove-dashboard-widgets'     => true,
 	// custom admin footer copyright text
-	'admin_footer_copyright'       => 'Copyright &copy; ' . date('Y'),
+	'admin_footer_copyright'       => __( 'Copyright', 'sp' ) . ' &copy; ' . date('Y'),
 	// custom admin footer version text
-	'admin_footer_version'         => __( 'Powered by WordPress.', 'sp' ),
-	// Remove redundant HTML head
-	'remove-html-head'             => true,
+	'admin_footer_version'         => __( 'Powered by <a href="http://wordpress.org" target="_blank">WordPress</a>.', 'sp' ),
+	// Remove unnecessary HTML head
+	'remove-unnecessary-html-head' => true,
 	// Disable core updates
 	'disable-core-updates'         => false,
 	// Disable theme updates

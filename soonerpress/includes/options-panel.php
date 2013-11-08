@@ -6,17 +6,19 @@
  * @subpackage Options_Panel
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
 
 /** get option value stored by Options Panel */
-function sp_option( $key, $locale_code = '' ) {
-	$result = get_option( apply_filters( 'sp_option_name', SP_OPTION_PREFIX . $key, $locale_code ) );
+function sp_option( $key, $locale = '' ) {
+	$result = get_option( apply_filters( 'sp_option_name', SP_OPTION_PREFIX . $key, $locale ) );
 	return $result;
 }
 
 
 class SP_Options_Panel extends SP_Module {
 
-	var $op_ignore_types = array( 'title', 'info' );
+	var $ignore_types = array( 'title', 'info' );
 
 	function __construct() {
 		$this->dc = array(
@@ -39,7 +41,7 @@ class SP_Options_Panel extends SP_Module {
 		// register setting field to WordPress
 		foreach ( $this->c['tabs'] as $option_tab ) {
 			foreach ( $option_tab['fields'] as $option ) {
-				if ( in_array( $option['type'], $this->op_ignore_types ) )
+				if ( in_array( $option['type'], $this->ignore_types ) )
 					continue;
 				$option_name = SP_OPTION_PREFIX . $option['id'];
 				register_setting( 'sp_options_panel', $option_name );
@@ -129,18 +131,18 @@ class SP_Options_Panel extends SP_Module {
 
 	function do_entry_html( $entry ) {
 
-		global $_sp_cm_repeatable_field_types;
-		$multiple = isset( $entry['multiple'] ) && $entry['multiple'] && in_array( $entry['type'], $_sp_cm_repeatable_field_types );
+		global $_sp_cf_repeatable_field_types;
+		$multiple = ( isset( $entry['multiple'] ) && $entry['multiple'] && in_array( $entry['type'], $_sp_cf_repeatable_field_types ) ) || ( 'group' == $entry['type'] );
 
-		echo '<tr valign="top" class="sp-cm-one sp-cm-one-t-' . $entry['type'] . '">';
+		echo '<tr valign="top" class="sp-cf-one sp-cf-one-t-' . $entry['type'] . '">';
 
 		// not a non-field type
-		if ( ! in_array( $entry['type'], $this->op_ignore_types ) )
-			printf( '<th scope="row" class="sp-cm-one-name">%s</th>', apply_filters( 'sp_op_one_name', $entry['title'], ( ( ! isset( $entry['ml'] ) ) || ( isset( $entry['ml'] ) && $entry['ml'] ) ) ) );
+		if ( ! in_array( $entry['type'], $this->ignore_types ) )
+			printf( '<th scope="row" class="sp-cf-one-name">%s</th>', apply_filters( 'sp_op_one_name', $entry['title'], ( ( ! isset( $entry['ml'] ) ) || ( isset( $entry['ml'] ) && $entry['ml'] ) ) ) );
 
 		// field name
-		echo '<td class="sp-cm-one-field' . ( $multiple ? ' sp-cm-one-field-multiple' : '' ) . '"' .
-			( in_array( $entry['type'], $this->op_ignore_types ) ? ' colspan="2"' : '' ) . '>';
+		echo '<td class="sp-cf-one-field' . ( $multiple ? ' sp-cf-one-field-multiple' : '' ) . '"' .
+			( in_array( $entry['type'], $this->ignore_types ) ? ' colspan="2"' : '' ) . '>';
 
 		// field input
 		switch ( $entry['type'] ) {
@@ -154,14 +156,14 @@ class SP_Options_Panel extends SP_Module {
 				do_action( 'sp_op_before_entry_field' );
 				if ( ! sp_module_enabled( 'multilingual' ) || ( isset( $entry['ml'] ) && ! $entry['ml'] ) ) {
 					// not in multi-language
-					echo '<div class="sp-cm-one-field-content">';
+					echo '<div class="sp-cf-one-field-content">';
 					$this->do_entry_html_field( $entry );
 					echo '</div>';
 				} else {
 					// multilingual is enabled & available
-					foreach ( sp_get_enabled_languages_ids() as $lang_code ) {
-						echo '<div class="sp-cm-one-field-l sp-cm-one-field-l-' . esc_attr( $lang_code ) . '">';
-						$this->do_entry_html_field( $entry, $lang_code );
+					foreach ( sp_get_enabled_languages_locales() as $locale_code ) {
+						echo '<div class="sp-cf-one-field-content sp-cf-one-field-l sp-cf-one-field-l-' . esc_attr( $locale_code ) . '">';
+						$this->do_entry_html_field( $entry, $locale_code );
 						echo '</div>';
 					}
 				}
@@ -170,8 +172,8 @@ class SP_Options_Panel extends SP_Module {
 		}
 
 		// field description
-		if ( ! in_array( $entry['type'], $this->op_ignore_types ) && isset( $entry['desc'] ) && ! empty( $entry['desc'] ) ) {
-			printf( '<span class="sp-cm-one-desc">%s</span>', $entry['desc'] );
+		if ( ! in_array( $entry['type'], $this->ignore_types ) && isset( $entry['desc'] ) && ! empty( $entry['desc'] ) ) {
+			printf( '<span class="sp-cf-one-desc">%s</span>', $entry['desc'] );
 		}
 
 		echo '</td>';
@@ -180,12 +182,12 @@ class SP_Options_Panel extends SP_Module {
 
 	}
 
-	function do_entry_html_field( $entry, $lang_code = '' ) {
-		$value = sp_option( $entry['id'], $lang_code );
+	function do_entry_html_field( $entry, $locale_code = '' ) {
+		$value = sp_option( $entry['id'], $locale_code );
 		if( false !== $value ) // a {false} will be returned if variable was not set
 			$entry['value'] = $value;
-		$entry['id'] = SP_OPTION_PREFIX . $entry['id'] . ( ! empty( $lang_code ) ? SP_META_LANG_PREFIX . $lang_code : '' );
-		new SP_CM_Field ( $entry );
+		$entry['id'] = SP_OPTION_PREFIX . $entry['id'] . ( ! empty( $locale_code ) ? SP_META_LANG_PREFIX . $locale_code : null );
+		new SP_Custom_Fields_Field ( $entry );
 	}
 
 	function enqueue_assets_dashboard() {
@@ -196,8 +198,10 @@ class SP_Options_Panel extends SP_Module {
 		wp_enqueue_style( 'sp.' . $this->slug . '.dashboard', $this->get_module_uri() . '/sp.' . $this->slug . '.dashboard.css', array(), false, 'screen' );
 		wp_enqueue_script( 'sp.' . $this->slug . '.dashboard', $this->get_module_uri() . '/sp.' . $this->slug . '.dashboard.js', array( 'jquery' ), false, true );
 
-		wp_localize_script( 'sp.' . $this->slug . '.dashboard', 'sp_options_panel_l10n', array(
-			'are_you_sure' => __( 'Are you sure?', 'sp' ),
+		wp_localize_script( 'sp.' . $this->slug . '.dashboard', 'sp_options_panel', array(
+			'l10n' => array(
+				'are_you_sure' => __( 'Are you sure?', 'sp' ),
+			),
 		) );
 
 	}

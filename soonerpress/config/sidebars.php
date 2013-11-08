@@ -6,16 +6,20 @@
  * @subpackage Sidebars
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
+
+/* This is a sample configuration, edit or delete it, then start developing :-) */
 
 /** Register Sidebars */
-function sp_register_sidebars() {
+function _sp_register_sidebars() {
 
 	register_sidebar( array(
 		'name' => __( 'Primary Sidebar', 'sp' ),
 		'id' => 'primary-widget-area',
 		'description' => __( 'Sidebar 1', 'sp' ),
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => '</li>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
@@ -24,12 +28,12 @@ function sp_register_sidebars() {
 		'name' => __( 'Secondary Sidebar', 'sp' ),
 		'id' => 'secondary-widget-area',
 		'description' => __( 'Sidebar 2', 'sp' ),
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => '</li>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 
 }
-add_action( 'widgets_init', 'sp_register_sidebars' );
+add_action( 'widgets_init', '_sp_register_sidebars' );
 

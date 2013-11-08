@@ -6,10 +6,14 @@
  * @subpackage Framework_Environment
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
+
+load_theme_textdomain( 'sp', SP_LANG );
+
 
 function sp_after_setup_theme() {
 
-	load_theme_textdomain( 'sp', SP_LANG );
 
 }
 add_action( 'after_setup_theme', 'sp_after_setup_theme' );

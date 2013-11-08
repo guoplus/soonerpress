@@ -6,6 +6,10 @@
  * @subpackage Widgets
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
+
+/* This is a sample configuration, edit or delete it, then start developing :-) */
 
 /** Widget: Sample Widget */
 class SP_widget_sample extends WP_Widget {

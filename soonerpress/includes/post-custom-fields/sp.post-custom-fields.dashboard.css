@@ -1,0 +1,21 @@
+
+
+.sp-pm-section .sp-cf-one { margin-top: 15px; margin-bottom: 15px; }
+	.sp-pm-section .sp-cf-one-name { float: left; width: 20%; display: block; margin: 5px 0; font-size: 13px; font-weight: bold; }
+	.sp-pm-section .sp-cf-one-field { display: block; }
+	.sp-pm-section .sp-cf-one-desc { display: block; color: gray; font-size: 11px; margin: 5px 0; font-style: italic; }
+	.sp-pm-section .sp-cf-one-field,
+	.sp-pm-section .sp-cf-one-desc { float: right; width: 76%; }
+	.sp-pm-section .sp-btn-addnew { margin-top: 5px; }
+.sp-pm-section .sp-cf-one:last { margin-bottom: 0; }
+
+.sp-pm-section .sp-cf-one-t-text input[type='text'] { width: 80%; }
+.sp-pm-section .sp-cf-one-t-textarea textarea,
+.sp-pm-section .sp-cf-one-t-google_maps textarea { width: 80%; min-height: 100px; resize: vertical; }
+
+.sp-pm-section .sp-cf-one-t-group input[type='text'] { width: 80%; }
+.sp-pm-section .sp-cf-one-t-group textarea { width: 80%; min-height: 80px; resize: vertical; }
+
+.sp-pm-section .sp-ml-lang-tabs { visibility: hidden; }
+	.sp-pm-section .sp-cf-one:hover .sp-ml-lang-tabs { visibility: visible; }
+

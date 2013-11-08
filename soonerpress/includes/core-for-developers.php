@@ -6,6 +6,8 @@
  * @subpackage Core
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
 
 /** dump an array or object as formatted HTML output */
 if ( ! function_exists( 'dump' ) ) :

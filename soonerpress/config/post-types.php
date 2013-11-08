@@ -6,11 +6,36 @@
  * @subpackage Post_Types
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
+
+/* This is a sample configuration, edit or delete it, then start developing :-) */
 
 /** Register Post Types */
-function sp_register_post_types() {
+function _sp_register_post_types() {
 
-	// This is a sample configuration, edit or delete it, then start developing :-)
+	register_post_type( 'blog', array(
+		'labels' => array(
+			'name' => _x( 'Blog Posts', 'post type general name', 'sp' ),
+			'singular_name' => _x( 'Post', 'post type singular name', 'sp' ),
+			'menu_name' => __( 'Blog Posts', 'sp' ),
+			'all_items' => __( 'All Posts', 'sp' ),
+			'add_new' => _X( 'Add New', 'blog', 'sp' ),
+			'add_new_item' => __( 'Add New Post', 'sp' ),
+			'edit_item' => __( 'Edit Post', 'sp' ),
+			'new_item' => __( 'New Post', 'sp' ),
+			'view_item' => __( 'View Post', 'sp' ),
+			'search_item' => __( 'Search Posts', 'sp' ),
+			'not_found' => __( 'No posts found.', 'sp' ),
+			'not_found_in_trash' => __( 'No posts found in Trash.', 'sp' ),
+			'parent_item_colon' => __( 'Parent Post', 'sp' ),
+		),
+		'menu_position' => 5,
+		'public' => true,
+		'hierarchical' => false,
+		'rewrite' => array( 'slug' => 'archive-blog' ),
+		'supports' => array( 'title', 'editor', 'excerpt' )
+	) );
 
 	register_post_type( 'slide', array(
 		'labels' => array(
@@ -31,7 +56,7 @@ function sp_register_post_types() {
 		'menu_position' => 5,
 		'public' => true,
 		'hierarchical' => false,
-		'rewrite' => array( 'slug' => 'archive-slides' ),
+		'rewrite' => array( 'slug' => 'archive-slide' ),
 		'supports' => array( 'title' )
 	) );
 
@@ -54,33 +79,79 @@ function sp_register_post_types() {
 		'menu_position' => 5,
 		'public' => true,
 		'hierarchical' => false,
-		'rewrite' => array( 'slug' => 'archive-events' ),
+		'rewrite' => array( 'slug' => 'archive-event' ),
 		'supports' => array( 'title', 'editor', 'excerpt' )
 	) );
 
-	register_post_type( 'news', array(
+	register_post_type( 'portfolio', array(
 		'labels' => array(
-			'name' => _x( 'News', 'post type general name', 'sp' ),
-			'singular_name' => _x( 'News', 'post type singular name', 'sp' ),
-			'menu_name' => __( 'News', 'sp' ),
-			'all_items' => __( 'All News', 'sp' ),
-			'add_new' => _X( 'Add New', 'news', 'sp' ),
-			'add_new_item' => __( 'Add New News', 'sp' ),
-			'edit_item' => __( 'Edit News', 'sp' ),
-			'new_item' => __( 'New News', 'sp' ),
-			'view_item' => __( 'View News', 'sp' ),
-			'search_item' => __( 'Search News', 'sp' ),
-			'not_found' => __( 'No news found.', 'sp' ),
-			'not_found_in_trash' => __( 'No news found in Trash.', 'sp' ),
-			'parent_item_colon' => __( 'Parent News', 'sp' ),
+			'name' => _x( 'Portfolios', 'post type general name', 'sp' ),
+			'singular_name' => _x( 'Portfolio', 'post type singular name', 'sp' ),
+			'menu_name' => __( 'Portfolios', 'sp' ),
+			'all_items' => __( 'All Portfolios', 'sp' ),
+			'add_new' => _X( 'Add New', 'portfolio', 'sp' ),
+			'add_new_item' => __( 'Add New Portfolio', 'sp' ),
+			'edit_item' => __( 'Edit Portfolio', 'sp' ),
+			'new_item' => __( 'New Portfolio', 'sp' ),
+			'view_item' => __( 'View Portfolio', 'sp' ),
+			'search_item' => __( 'Search Portfolios', 'sp' ),
+			'not_found' => __( 'No portfolios found.', 'sp' ),
+			'not_found_in_trash' => __( 'No portfolios found in Trash.', 'sp' ),
+			'parent_item_colon' => __( 'Parent Portfolio', 'sp' ),
 		),
 		'menu_position' => 5,
 		'public' => true,
 		'hierarchical' => false,
-		'rewrite' => array( 'slug' => 'archive-news' ),
+		'rewrite' => array( 'slug' => 'archive-portfolio' ),
 		'supports' => array( 'title', 'editor', 'excerpt' )
 	) );
 
+	register_post_type( 'pricing', array(
+		'labels' => array(
+			'name' => _x( 'Pricing', 'post type general name', 'sp' ),
+			'singular_name' => _x( 'Pricing', 'post type singular name', 'sp' ),
+			'menu_name' => __( 'Pricing', 'sp' ),
+			'all_items' => __( 'All Pricing', 'sp' ),
+			'add_new' => _X( 'Add New', 'pricing', 'sp' ),
+			'add_new_item' => __( 'Add New Pricing', 'sp' ),
+			'edit_item' => __( 'Edit Pricing', 'sp' ),
+			'new_item' => __( 'New Pricing', 'sp' ),
+			'view_item' => __( 'View Pricing', 'sp' ),
+			'search_item' => __( 'Search Pricing', 'sp' ),
+			'not_found' => __( 'No pricing found.', 'sp' ),
+			'not_found_in_trash' => __( 'No pricing found in Trash.', 'sp' ),
+			'parent_item_colon' => __( 'Parent Portfolio', 'sp' ),
+		),
+		'menu_position' => 5,
+		'public' => true,
+		'hierarchical' => false,
+		'rewrite' => array( 'slug' => 'archive-pricing' ),
+		'supports' => array( 'title', 'editor', 'excerpt' )
+	) );
+
+	register_post_type( 'branch', array(
+		'labels' => array(
+			'name' => _x( 'Branches', 'post type general name', 'sp' ),
+			'singular_name' => _x( 'Branch', 'post type singular name', 'sp' ),
+			'menu_name' => __( 'Branches', 'sp' ),
+			'all_items' => __( 'All Branches', 'sp' ),
+			'add_new' => _X( 'Add New', 'branch', 'sp' ),
+			'add_new_item' => __( 'Add New Branch', 'sp' ),
+			'edit_item' => __( 'Edit Branch', 'sp' ),
+			'new_item' => __( 'New Branch', 'sp' ),
+			'view_item' => __( 'View Branch', 'sp' ),
+			'search_item' => __( 'Search Branches', 'sp' ),
+			'not_found' => __( 'No branches found.', 'sp' ),
+			'not_found_in_trash' => __( 'No branches found in Trash.', 'sp' ),
+			'parent_item_colon' => __( 'Parent Branch', 'sp' ),
+		),
+		'menu_position' => 5,
+		'public' => true,
+		'hierarchical' => false,
+		'rewrite' => array( 'slug' => 'archive-branch' ),
+		'supports' => array( 'title', 'editor' )
+	) );
+
 }
-add_action( 'init', 'sp_register_post_types' );
+add_action( 'init', '_sp_register_post_types' );
 

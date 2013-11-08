@@ -6,6 +6,10 @@
  * @subpackage Options_Panel
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
+
+/* This is a sample configuration, edit or delete it, then start developing :-) */
 
 if( is_admin() ) {
 
@@ -21,155 +25,138 @@ if( is_admin() ) {
 <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
 EOTEXT;
 	$sp_config['options-panel']['after_form'] = <<< EOTEXT
-<p>"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
-<p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
+<p>There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...</p>
+<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
 EOTEXT;
 
 	$sp_config['options-panel']['tabs'][] = array(
 		'title' => __( 'General', 'sp' ), // tab name
-		'icon' => sp_icon_font( 'home' ), // tab icon
+		'icon' => sp_icon_src( 'home_page' ), // tab icon
 		'fields' => array(
 			array(
-				'title' => __( 'Global', 'sp' ),
+				'title' => __( 'General', 'sp' ),
 				'type' => 'title', // tab content title
 			),
 			array(
-				'title' => __( 'This is the global settings.', 'sp' ),
+				'title' => __( 'This is the general settings.', 'sp' ),
 				'type' => 'info', // description info text below tab title
 			),
 			array(
-				'id' => 'site_name', // id stored in database
-				'title' => __( 'Site Name', 'sp' ),
-				'type' => 'text',
-				'placeholder' => __( 'SoonerPress Testing Website', 'sp' ),
-				'desc' => __( 'Enter your website name here.', 'sp' ),
-				'std' => 'Blog', // default value
+				'id' => 'site_logo',
+				'title' => __( 'Custom Logo', 'sp' ),
+				'type' => 'image',
+				'desc' => 'Upload a main logo image, size: 300 × 60 (pixels).',
 			),
 			array(
-				'id' => 'site_description',
-				'title' => __( 'Site Description', 'sp' ),
-				'type' => 'textarea',
-				'placeholder' => __( 'The most powerful WordPress development framework.', 'sp' ),
-				'desc' => __( 'Enter your website description here.', 'sp' ),
-			),
-			array(
-				'id' => 'site_biography',
-				'title' => __( 'Site Biography', 'sp' ),
-				'type' => 'wysiwyg',
-			),
-			array(
-				'id' => 'site_date_built',
-				'title' => __( 'Site Built Date', 'sp' ),
+				'id' => 'site_favicon',
+				'title' => __( 'Favicon Image', 'sp' ),
+				'type' => 'image',
+				'desc' => 'Upload a favicon image, size: 16 × 16 (pixels).',
 				'ml' => false,
-				'type' => 'datepicker',
 			),
 		),
 	);
 	$sp_config['options-panel']['tabs'][] = array(
-		'title' => __( 'List Select', 'sp' ),
-		'icon' => sp_icon_font( 'list' ),
+		'title' => __( 'Layout', 'sp' ), // tab name
+		'icon' => sp_icon_src( 'layout_edit' ), // tab icon
 		'fields' => array(
 			array(
-				'id' => 'contactus_pageid',
-				'title' => __( 'Page "Contact Us"', 'sp' ),
-				'type' => 'posts',
+				'title' => __( 'Website Layout Mode', 'sp' ),
+				'type' => 'title',
+			),
+			array(
+				'title' => __( 'This is the pages layout settings.', 'sp' ),
+				'type' => 'info',
+			),
+			array(
+				'id' => 'layout_home',
+				'title' => __( 'Homepage Layout', 'sp' ),
+				'type' => 'radio_icon',
+				'choices' => array(
+					'full_width'           => array( SP_IMG . '/admin/layout-1.png', __( 'Full width content', 'sp' ) ),
+					'right_sidebar'        => array( SP_IMG . '/admin/layout-2.png', __( 'Sidebar on the right', 'sp' ) ),
+					'left_sidebar'         => array( SP_IMG . '/admin/layout-3.png', __( 'Sidebar on the left', 'sp' ) ),
+					'right_double_sidebar' => array( SP_IMG . '/admin/layout-4.png', __( 'Double sidebar on the right', 'sp' ) ),
+					'left_double_sidebar'  => array( SP_IMG . '/admin/layout-5.png', __( 'Double sidebar on the left', 'sp' ) ),
+					'left_right_sidebar'   => array( SP_IMG . '/admin/layout-6.png', __( 'Double sidebar on the left and right', 'sp' ) ),
+				),
+				'std' => 'right_sidebar',
+				'desc' => __( 'Select your homepage layout mode.', 'sp' ),
+				'ml' => false,
+			),
+			array(
+				'id' => 'layout_page',
+				'title' => __( 'Individual Page Layout', 'sp' ),
+				'type' => 'radio_icon',
+				'choices' => array(
+					'full_width'           => array( SP_IMG . '/admin/layout-1.png', __( 'Full width content', 'sp' ) ),
+					'right_sidebar'        => array( SP_IMG . '/admin/layout-2.png', __( 'Sidebar on the right', 'sp' ) ),
+					'left_sidebar'         => array( SP_IMG . '/admin/layout-3.png', __( 'Sidebar on the left', 'sp' ) ),
+					'right_double_sidebar' => array( SP_IMG . '/admin/layout-4.png', __( 'Double sidebar on the right', 'sp' ) ),
+					'left_double_sidebar'  => array( SP_IMG . '/admin/layout-5.png', __( 'Double sidebar on the left', 'sp' ) ),
+					'left_right_sidebar'   => array( SP_IMG . '/admin/layout-6.png', __( 'Double sidebar on the left and right', 'sp' ) ),
+				),
+				'std' => 'full_width',
+				'desc' => __( 'Select your individual page layout mode.', 'sp' ),
+				'ml' => false,
+			),
+			array(
+				'id' => 'layout_archive',
+				'title' => __( 'Archive Page Layout', 'sp' ),
+				'type' => 'radio_icon',
+				'choices' => array(
+					'full_width'           => array( SP_IMG . '/admin/layout-1.png', __( 'Full width content', 'sp' ) ),
+					'right_sidebar'        => array( SP_IMG . '/admin/layout-2.png', __( 'Sidebar on the right', 'sp' ) ),
+					'left_sidebar'         => array( SP_IMG . '/admin/layout-3.png', __( 'Sidebar on the left', 'sp' ) ),
+					'right_double_sidebar' => array( SP_IMG . '/admin/layout-4.png', __( 'Double sidebar on the right', 'sp' ) ),
+					'left_double_sidebar'  => array( SP_IMG . '/admin/layout-5.png', __( 'Double sidebar on the left', 'sp' ) ),
+					'left_right_sidebar'   => array( SP_IMG . '/admin/layout-6.png', __( 'Double sidebar on the left and right', 'sp' ) ),
+				),
+				'std' => 'full_width',
+				'desc' => __( 'Select your archive page layout mode.', 'sp' ),
+				'ml' => false,
+			),
+		),
+	);
+	$sp_config['options-panel']['tabs'][] = array(
+		'title' => __( 'Color', 'sp' ), // tab name
+		'icon' => sp_icon_src( 'color_wheel' ), // tab icon
+		'fields' => array(
+			array(
+				'title' => __( 'Color Control', 'sp' ),
+				'type' => 'title',
+			),
+			array(
+				'title' => __( '.', 'sp' ),
+				'type' => 'info',
+			),
+		),
+	);
+	$sp_config['options-panel']['tabs'][] = array(
+		'title' => __( 'Typography', 'sp' ), // tab name
+		'icon' => sp_icon_src( 'text_smallcaps' ), // tab icon
+		'fields' => array(
+			array(
+				'id' => 'font_primary',
+				'title' => __( 'Primary Font', 'sp' ),
+				'type' => 'font',
 				'field_type' => 'select',
-				'query_vars' => array(
-					'post_type' => 'page',
-					'orderby' => 'post_title',
-					'order' => 'ASC',
-				),
-				'desc' => __( 'Select a page to go.', 'sp' ),
-			),
-			array(
-				'id' => 'pages_enabled_slider',
-				'title' => __( 'Pages to add Slider', 'sp' ),
-				'type' => 'posts',
-				'field_type' => 'selectmulti',
-				'query_vars' => array(
-					'post_type' => 'page',
-					'orderby' => 'post_title',
-					'order' => 'DESC',
-				),
-				'desc' => __( 'Select some pages to go.', 'sp' ),
-			),
-			array(
-				'id' => 'specified_category',
-				'title' => __( 'Specified post category', 'sp' ),
-				'type' => 'taxonomy',
-				'field_type' => 'radio',
-				'taxonomy' => 'category',
-				'get_terms_args' => array(
-					'hide_empty' => false,
-					'orderby' => 'name',
-					'order' => 'ASC',
-				),
-				'desc' => __( 'Select a category to go.', 'sp' ),
-			),
-			array(
-				'id' => 'spokesperson_name',
-				'title' => __( 'Spokesperson', 'sp' ),
-				'type' => 'selectmulti',
-				'desc' => __( 'Notice: hold "Ctrl" button and click to select multi choices.', 'sp' ),
 				'choices' => array(
-					'jason' => __( 'Jason', 'sp' ),
-					'bob' => __( 'Bob', 'sp' ),
-					'joe' => __( 'Joe', 'sp' ),
-					'jenny' => __( 'Jenny', 'sp' ),
-					'tom' => __( 'Tom', 'sp' ),
-					'jane' => __( 'Jane', 'sp' ),
-					'freeman' => __( 'Freeman', 'sp' ),
+					'"Arial Black", "Arial Bold", Arial, sans-serif' => __( 'Arial Black', 'sp' ),
+					'Calibri, "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif' => __( 'Calibri', 'sp' ),
+					'Courier, Verdana, sans-serif' => __( 'Courier', 'sp' ),
+					'"Helvetica Neue", Helvetica, Arial, sans-serif' => __( 'Helvetica', 'sp' ),
+					'"Lucida Bright", Cambria, Georgia, "Times New Roman", Times, serif' => __( 'Lucida Bright', 'sp' ),
+					'"Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif' => __( 'Lucida Grande', 'sp' ),
+					'Tahoma, Geneva, Verdana, sans-serif' => __( 'Tahoma', 'sp' ),
 				),
-				'std' => array( 'bob', 'tom', ),
-			),
-			array(
-				'id' => 'enabled_banner',
-				'title' => __( 'Enabled Banner Pages', 'sp' ),
-				'type' => 'checkbox',
-				'choices' => array(
-					'home' => __( 'Homepage', 'sp' ),
-					'news_single' => __( 'Single News', 'sp' ),
-					'news_archive' => __( 'News Archive', 'sp' ),
-				),
-				'std' => array( 'home', 'news_archive' ),
-			),
-		),
-	);
-	$sp_config['options-panel']['tabs'][] = array(
-		'title' => __( 'File Upload', 'sp' ),
-		'icon' => sp_icon_font( 'file' ),
-		'fields' => array(
-			array(
-				'id' => 'readme_file',
-				'title' => __( 'File: Readme Document', 'sp' ),
-				'desc' => __( 'Please select a .txt file here.', 'sp' ),
-				'type' => 'file',
-			),
-			array(
-				'id' => 'extra_file',
-				'title' => __( 'Files: Extra Document', 'sp' ),
-				'type' => 'file',
-				'desc' => __( 'File list.', 'sp' ),
-				'multiple' => true,
-			),
-			array(
-				'id' => 'logo',
-				'title' => __( 'Image: Logo', 'sp' ),
-				'type' => 'image',
-				'desc' => __( 'No image size limit.', 'sp' ),
-			),
-			array(
-				'id' => 'photos',
-				'title' => __( 'Images: Photo', 'sp' ),
-				'type' => 'image',
-				'desc' => __( 'Images list.', 'sp' ),
-				'multiple' => true,
+				'std' => 'helvetica',
 			),
 		),
 	);
 	$sp_config['options-panel']['tabs'][] = array(
 		'title' => __( 'Header & Footer', 'sp' ),
-		'icon' => sp_icon_font( 'columns' ),
+		'icon' => sp_icon_src( 'layout_header' ),
 		'fields' => array(
 			array(
 				'title' => __( 'Header', 'sp' ),
@@ -180,21 +167,31 @@ EOTEXT;
 				'type' => 'info',
 			),
 			array(
-				'id' => 'site_logo_url',
-				'title' => __( 'Logo', 'sp' ),
-				'type' => 'image',
-				'desc' => 'Upload a main logo image, size: 300 × 60 (pixels).',
-				'std' => SP_IMG . '/logo.png',
-			),
-			array(
-				'id' => 'logo_align',
-				'title' => __( 'Logo Alignment', 'sp' ),
+				'id' => 'branding_mode',
+				'title' => __( 'Branding Type', 'sp' ),
 				'type' => 'select',
 				'choices' => array(
-					'left' => __( 'Left', 'sp' ),
-					'right' => __( 'Right', 'sp' ),
+					'image' => __( 'Logo Image', 'sp' ),
+					'text' => __( 'Text', 'sp' ),
 				),
-				'std' => 'right',
+				'desc' => 'Once you select logo image, you have to upload a logo image in Options Panel to make effect.',
+				'std' => 'image',
+			),
+			array(
+				'id' => 'website_title',
+				'title' => __( 'Website Title', 'sp' ),
+				'type' => 'text',
+				'show_field_when' => array(
+					'branding_mode' => 'text',
+				),
+				'std' => get_bloginfo( 'name' ),
+			),
+			array(
+				'id' => 'show_header_nav',
+				'title' => __( 'Show Header Menu', 'sp' ),
+				'type' => 'on_off',
+				'std' => 1,
+				'ml' => false,
 			),
 			array(
 				'title' => __( 'Footer', 'sp' ),
@@ -214,99 +211,224 @@ EOTEXT;
 			array(
 				'id' => 'footer_align',
 				'title' => __( 'Footer Alignment', 'sp' ),
-				'type' => 'radio',
+				'type' => 'select',
 				'choices' => array(
-					'left' => __( 'Left', 'sp' ),
-					'center' => __( 'Center', 'sp' ),
-					'right' => __( 'Right', 'sp' ),
+					'footer-align-left' => __( 'Left', 'sp' ),
+					'footer-align-center' => __( 'Center', 'sp' ),
+					'footer-align-right' => __( 'Right', 'sp' ),
 				),
-				'std' => 'center',
+				'std' => 'footer-align-left',
+				'ml' => false,
+			),
+			array(
+				'id' => 'show_footer_nav',
+				'title' => __( 'Show Footer Menu', 'sp' ),
+				'type' => 'on_off',
+				'std' => 1,
+				'ml' => false,
 			),
 		),
 	);
 	$sp_config['options-panel']['tabs'][] = array(
-		'title' => __( 'Multiple Field', 'sp' ),
-		'icon' => sp_icon_font( 'list-ol' ),
+		'title' => __( 'Social', 'sp' ),
+		'icon' => sp_icon_src( 'twitter_2' ),
 		'fields' => array(
 			array(
-				'id' => 'text_single_multiple',
-				'title' => __( 'Single text', 'sp' ),
+				'title' => __( 'Social Network Links', 'sp' ),
+				'type' => 'title',
+			),
+			array(
+				'title' => __( 'Social Network links settings.', 'sp' ),
+				'type' => 'info',
+			),
+			array(
+				'id' => 'social_tw',
+				'title' => __( 'Twitter URL', 'sp' ),
+				'desc' => __( 'Enter full Twitter link URL here, including http:// or https://.', 'sp' ),
 				'type' => 'text',
-				'multiple' => true,
-				'desc' => 'A single text repeatable.',
+				'placeholder' => 'https://twitter.com/'
 			),
 			array(
-				'id' => 'text_single_multiple_with_def',
-				'title' => __( 'Single text with default value', 'sp' ),
+				'id' => 'social_fb',
+				'title' => __( 'Facebook URL', 'sp' ),
+				'desc' => __( 'Enter full Facebook link URL here, including http:// or https://.', 'sp' ),
 				'type' => 'text',
-				'multiple' => true,
-				'desc' => 'A single text repeatable.',
-				'std' => 'test value',
-			),
-		),
-	);
-	$sp_config['options-panel']['tabs'][] = array(
-		'title' => __( 'Extra Fields', 'sp' ),
-		'icon' => sp_icon_font( 'lightbulb' ),
-		'fields' => array(
-			array(
-				'id' => 'my_date',
-				'title' => __( 'Date Picker', 'sp' ),
-				'type' => 'datepicker',
+				'placeholder' => 'https://facebook.com/'
 			),
 			array(
-				'id' => 'my_time',
-				'title' => __( 'Time Picker', 'sp' ),
-				'type' => 'timepicker',
+				'id' => 'social_gp',
+				'title' => __( 'Google+ URL', 'sp' ),
+				'desc' => __( 'Enter full Google+ link URL here, including http:// or https://.', 'sp' ),
+				'type' => 'text',
 			),
 			array(
-				'id' => 'my_datetime',
-				'title' => __( 'Datetime Picker', 'sp' ),
-				'type' => 'datetimepicker',
+				'id' => 'social_pi',
+				'title' => __( 'Pinterest URL', 'sp' ),
+				'desc' => __( 'Enter full Pinterest link URL here, including http:// or https://.', 'sp' ),
+				'type' => 'text',
 			),
 			array(
-				'id' => 'my_color',
-				'title' => __( 'Color Selector with title tip', 'sp' ),
-				'type' => 'colorselector',
-				'choices' => array(
-					'#ff0000' => __( 'Red', 'sp' ),
-					'#00ff00' => __( 'Green', 'sp' ),
-					'#0000ff' => __( 'Blue', 'sp' ),
-				),
+				'id' => 'social_li',
+				'title' => __( 'LinkedIn URL', 'sp' ),
+				'desc' => __( 'Enter full LinkedIn link URL here, including http:// or https://.', 'sp' ),
+				'type' => 'text',
 			),
 			array(
-				'id' => 'my_color_2',
-				'title' => __( 'Color Selector', 'sp' ),
-				'type' => 'colorselector',
-				'choices' => array(
-					'#ff0000', '#00ff00', '#0000ff',
-				),
-			),
-			array(
-				'id' => 'my_color_3',
-				'title' => __( 'Color Picker', 'sp' ),
-				'type' => 'colorpicker',
+				'id' => 'social_is',
+				'title' => __( 'Instagram URL', 'sp' ),
+				'desc' => __( 'Enter full Instagram link URL here, including http:// or https://.', 'sp' ),
+				'type' => 'text',
 			),
 		),
 	);
 	$sp_config['options-panel']['tabs'][] = array(
 		'title' => __( 'SEO', 'sp' ),
-		'icon' => sp_icon_font( 'search' ),
+		'icon' => sp_icon_src( 'google_custom_search' ),
 		'fields' => array(
+			array(
+				'title' => __( 'Basic SEO', 'sp' ),
+				'type' => 'title',
+			),
+			array(
+				'title' => __( 'Basic Searching Engine Optimization for website, must enabled SoonerPress SEO module.', 'sp' ),
+				'type' => 'info',
+			),
 			array(
 				'id' => 'global_title',
 				'title' => __( 'Global Title', 'sp' ),
+				'desc' => __( 'HTML title for homepage', 'sp' ),
 				'type' => 'text',
 			),
 			array(
 				'id' => 'global_description',
 				'title' => __( 'Global Description', 'sp' ),
+				'desc' => __( 'HTML head description for homepage', 'sp' ),
 				'type' => 'textarea',
 			),
 			array(
 				'id' => 'global_keywords',
 				'title' => __( 'Global Keywords', 'sp' ),
+				'desc' => __( 'HTML head keywords for homepage', 'sp' ),
 				'type' => 'textarea',
+			),
+		),
+	);
+	$sp_config['options-panel']['tabs'][] = array(
+		'title' => __( 'Pages', 'sp' ),
+		'icon' => sp_icon_src( 'page_gear' ),
+		'fields' => array(
+			array(
+				'title' => __( 'Branches Settings', 'sp' ),
+				'type' => 'title',
+			),
+			array(
+				'title' => __( 'Settings for Branches page.', 'sp' ),
+				'type' => 'info',
+			),
+			array(
+				'id' => 'page_branches_init_location',
+				'title' => __( 'Default Location', 'sp' ),
+				'desc' => __( 'Enter a full address to go.', 'sp' ),
+				'type' => 'google_maps',
+				'ml' => false,
+			),
+			array(
+				'id' => 'page_branches_init_zoom',
+				'title' => __( 'Default Zooming Level', 'sp' ),
+				'type' => 'select',
+				'choices' => array( '1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10','11'=>'11','12'=>'12','13'=>'13','14'=>'14','15'=>'15','16'=>'16','17'=>'17','18'=>'18','19'=>'19','20'=>'20', ),
+				'ml' => false,
+			),
+		),
+	);
+	$sp_config['options-panel']['tabs'][] = array(
+		'title' => __( 'Advanced', 'sp' ),
+		'icon' => sp_icon_src( 'lightbulb' ),
+		'fields' => array(
+			array(
+				'title' => __( 'Advanced Settings', 'sp' ),
+				'type' => 'title',
+			),
+			array(
+				'title' => __( 'Advanced settings for additional uses.', 'sp' ),
+				'type' => 'info',
+			),
+		),
+	);
+	$sp_config['options-panel']['tabs'][] = array(
+		'title' => __( 'Test', 'sp' ),
+		'icon' => sp_icon_src( 'cog' ),
+		'fields' => array(
+			array(
+				'title' => __( 'Custom Field Test', 'sp' ),
+				'type' => 'title',
+			),
+			array(
+				'title' => __( 'SoonerPress Custom Meta Field test.', 'sp' ),
+				'type' => 'info',
+			),
+			array(
+				'id' => 'events',
+				'title' => __( 'Events', 'sp' ),
+				'desc' => __( 'Events list with multiple group data.', 'sp' ),
+				'type' => 'group',
+				'row_title' => __( 'An Event', 'sp' ),
+				'row_name_refer_to' => 'event_title',
+				'expanded_default' => true,
+				// 'ml' => false,
+				'fields' => array(
+					array(
+						'id' => 'event_title',
+						'title' => __( 'Event Title', 'sp' ),
+						'desc' => __( 'Title of event here.', 'sp' ),
+						'type' => 'text',
+					),
+					array(
+						'id' => 'event_description',
+						'title' => __( 'Event Description', 'sp' ),
+						'desc' => __( 'Description of event here.', 'sp' ),
+						'type' => 'textarea',
+					),
+					array(
+						'id' => 'event_sponsors',
+						'title' => __( 'Event Sponsors', 'sp' ),
+						'desc' => __( 'Sponsors of event here.', 'sp' ),
+						'type' => 'group',
+						'row_title' => __( 'A Sponsor', 'sp' ),
+						'row_name_refer_to' => 'sponsor_name',
+						'fields' => array(
+							array(
+								'id' => 'sponsor_name',
+								'title' => __( 'Sponsor Name', 'sp' ),
+								'desc' => __( 'Name of event sponsor here.', 'sp' ),
+								'type' => 'text',
+							),
+							array(
+								'id' => 'sponsor_features',
+								'title' => __( 'Sponsor Features', 'sp' ),
+								'desc' => __( 'Features of event sponsor here.', 'sp' ),
+								'type' => 'group',
+								'row_title' => __( 'A Feature', 'sp' ),
+								'row_name_refer_to' => 'sponsor_feature_title',
+								'fields' => array(
+									array(
+										'id' => 'sponsor_feature_title',
+										'title' => __( 'Sponsor Feature Title', 'sp' ),
+										'desc' => __( 'Title of feature here.', 'sp' ),
+										'type' => 'text',
+									),
+									array(
+										'id' => 'sponsor_feature_data',
+										'title' => __( 'Sponsor Data', 'sp' ),
+										'desc' => __( 'Data of feature here.', 'sp' ),
+										'type' => 'text',
+										'multiple' => true,
+									),
+								),
+							),
+						),
+					),
+				),
 			),
 		),
 	);

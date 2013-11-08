@@ -6,6 +6,10 @@
  * @subpackage SEO
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
+
+/* This is a sample configuration, edit or delete it, then start developing :-) */
 
 global $sp_config;
 

@@ -22,10 +22,11 @@ $(document).ready( function() {
 		.removeClass('current')
 		.filter('.sp-ml-lang-tab-'+current_lang).addClass('current');
 	$('.sp_lang_selector a').click( function(e) {
-		if ( '#' == $(this).attr('href') )
+		if ( '#' == $(this).attr('href') ) {
 			e.preventDefault();
+			window.location.reload();
+		}
 		$.cookie( 'lang', $(this).data('lang'), { expires: 365 } );
-		window.location.reload();
 	} );
 
 } );

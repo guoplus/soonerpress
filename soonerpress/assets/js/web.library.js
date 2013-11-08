@@ -1,12 +1,4 @@
 
-// global variables
-
-if ( 'undefined' != typeof sp ) {
-	var baseurl = sp.baseurl;
-	var ajaxurl = sp.ajaxurl;
-	var tplurl  = sp.tplurl;
-}
-
 // Useful functions
 
 var isMobile = {

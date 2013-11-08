@@ -6,6 +6,8 @@
  * @subpackage Core
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
 
 /**
  * get attachment ID specified by image URL
@@ -31,7 +33,7 @@ function get_post_id_by_slug( $slug, $post_type = 'post' ) {
 		'name' => $slug,
 		'post_type' => $post_type,
 	) );
-	if ( 1 == $query_tmp->post_count )
+	if ( 1 === $query_tmp->post_count )
 		return $query_tmp->post->ID;
 	return false;
 }

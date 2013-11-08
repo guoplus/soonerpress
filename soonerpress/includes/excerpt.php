@@ -6,4 +6,6 @@
  * @subpackage Post_Excerpt
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
 

@@ -6,6 +6,10 @@
  * @subpackage Shortcodes
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
+
+/* This is a sample configuration, edit or delete it, then start developing :-) */
 
 /** Shortcode: Sample Shortcode */
 function sp_shortcode_sample( $atts, $content = null ) {

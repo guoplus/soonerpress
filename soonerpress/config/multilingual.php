@@ -6,6 +6,10 @@
  * @subpackage Multilingual
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
+
+/* This is a sample configuration, edit or delete it, then start developing :-) */
 
 global $sp_config;
 
@@ -16,494 +20,494 @@ $sp_config['multilingual'] = array(
 	'allow_options_download_wp_messages' => true,
 	'allow_options_post_type'            => true,
 	'allow_options_taxonomy'             => true,
-	'options_main'                       => array(
+	'options'                            => array(
 		// Post type to bind multilanguage, ignore this to bind to all post-types
-		'post_type' => array( 'post', 'page', 'slide', 'event' ),
+		'post_type' => array( 'blog', 'page', 'slide', 'event', 'product', ),
 		// taxonomy to bind multilanguage, ignore this to bind to all taxonomies
-		'taxonomy'  => array( 'category', 'post_tag' ),
+		'taxonomy'  => array( 'blog_category', 'blog_tag', ),
 	),
 	'languages' => array(
 		'af'     => array(
-			'name' => 'Afrikaans - Afrikaans',
+			'title' => 'Afrikaans - Afrikaans', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'an'     => array(
-			'name' => 'Aragonese - Aragonés',
+			'title' => 'Aragonese - Aragonés', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'ar'     => array(
-			'name' => 'Arabic – عربي',
+			'title' => 'Arabic – عربي', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/ar.gif',
 		),
 		'as'     => array(
-			'name' => 'Assamese - অসমীয়া',
+			'title' => 'Assamese - অসমীয়া', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'az'     => array(
-			'name' => 'Azerbaijani - Azərbaycan dili',
+			'title' => 'Azerbaijani - Azərbaycan dili', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'az_TR'  => array(
-			'name' => 'Azerbaijani (Turkey) - Azərbaycan Türkcəsi',
+			'title' => 'Azerbaijani (Turkey) - Azərbaycan Türkcəsi', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'azb'    => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'bel'    => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'bg_BG'  => array(
-			'name' => 'Bulgarian - Български',
+			'title' => 'Bulgarian - Български', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'bn_BD'  => array(
-			'name' => 'Bangla - Bengali',
+			'title' => 'Bangla - Bengali', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'bo'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'bs_BA'  => array(
-			'name' => 'Bosnian - Bosanski',
+			'title' => 'Bosnian - Bosanski', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'ca'     => array(
-			'name' => 'Catalan - Català',
+			'title' => 'Catalan - Català', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'ckb'    => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'co'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'cpp'    => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'cs_CZ'  => array(
-			'name' => 'Czech - Čeština',
+			'title' => 'Czech - Čeština', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'cy'     => array(
-			'name' => 'Welsh - Cymraeg',
+			'title' => 'Welsh - Cymraeg', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'da_DK'  => array(
-			'name' => 'Danish - Dansk',
+			'title' => 'Danish - Dansk', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'de_DE'  => array(
-			'name' => 'German - Deutsch',
+			'title' => 'German - Deutsch', 'name' => 'Deutsch',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/de.gif',
 			'date_format' => 'j. F Y', 'time_format' => 'g:i A',
 		),
 	//		'dv'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'el'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'en_CA'  => array(
-			'name' => 'Canadian English',
+			'title' => 'Canadian English', 'name' => 'English',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/ca.gif',
 		),
 		'en_GB'  => array(
-			'name' => 'British English',
+			'title' => 'British English', 'name' => 'English',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'eo'     => array(
-			'name' => 'Esperanto',
+			'title' => 'Esperanto', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'es_CL'  => array(
-			'name' => 'Chilean - Chile',
+			'title' => 'Chilean - Chile', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'es_ES'  => array(
-			'name' => 'Spanish - Español - España',
+			'title' => 'Spanish - Español - España', 'name' => 'Spanish',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/es.gif',
 		),
 		'es_PE'  => array(
-			'name' => 'Spanish - Español - Perú',
+			'title' => 'Spanish - Español - Perú', 'name' => 'Spanish',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'en_US'  => array(
-			'name' => 'English - United States',
+			'title' => 'English - United States', 'name' => 'English',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/us.gif',
 			'date_format' => 'F j, Y', 'time_format' => 'g:i a',
 		),
 	//		'es_VE'  => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'et'     => array(
-			'name' => 'Estonian - Eesti',
+			'title' => 'Estonian - Eesti', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'eu'     => array(
-			'name' => 'Basque - Euskara',
+			'title' => 'Basque - Euskara', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'fa_AF'  => array(
-			'name' => 'Persian (Afghanistan) - (فارسی (افغانستان',
+			'title' => 'Persian (Afghanistan) - (فارسی (افغانستان', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'fa_IR'  => array(
-			'name' => 'Persian - وردپرس پارسی',
+			'title' => 'Persian - وردپرس پارسی', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'fi'     => array(
-			'name' => 'Finnish - Suomi',
+			'title' => 'Finnish - Suomi', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/fi.gif',
 		),
 		'fo'     => array(
-			'name' => 'Faroese - føroyskt',
+			'title' => 'Faroese - føroyskt', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'fr_BE'  => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'fr_FR'  => array(
-			'name' => 'French - Français',
+			'title' => 'French - Français', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/fr.gif',
 		),
 		'fy'     => array(
-			'name' => 'Frisian - Frysk',
+			'title' => 'Frisian - Frysk', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'ga'     => array(
-			'name' => 'Gaeilge - Irish',
+			'title' => 'Gaeilge - Irish', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'gd'     => array(
-			'name' => 'Scottish Gaelic - Gàidhlig',
+			'title' => 'Scottish Gaelic - Gàidhlig', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'gl_ES'  => array(
-			'name' => 'Galician - Galego',
+			'title' => 'Galician - Galego', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'gsw'    => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'gu'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'haw_US' => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'haz'    => array(
-			'name' => 'Hazaragi – هزاره‌گی',
+			'title' => 'Hazaragi – هزاره‌گی', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'he_IL'  => array(
-			'name' => 'Hebrew - עברית',
+			'title' => 'Hebrew - עברית', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'hi_IN'  => array(
-			'name' => 'Hindi - हिन्दी',
+			'title' => 'Hindi - हिन्दी', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'hr'     => array(
-			'name' => 'Croatian - Hrvatski',
+			'title' => 'Croatian - Hrvatski', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'hu_HU'  => array(
-			'name' => 'Hungarian - Magyar',
+			'title' => 'Hungarian - Magyar', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/hu.gif',
 		),
 	//		'hy'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'id_ID'  => array(
-			'name' => 'Indonesian - Bahasa Indonesia',
+			'title' => 'Indonesian - Bahasa Indonesia', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'is_IS'  => array(
-			'name' => 'Icelandic - íslenska',
+			'title' => 'Icelandic - íslenska', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'it_IT'  => array(
-			'name' => 'Italian - Italiano',
+			'title' => 'Italian - Italiano', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/it.gif',
 		),
 		'ja'     => array(
-			'name' => 'Japanese (日本語)',
+			'title' => 'Japanese (日本語)', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/jp.gif',
 		),
 		'jv_ID'  => array(
-			'name' => 'Javanese - Basa Jawa',
+			'title' => 'Javanese - Basa Jawa', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'ka_GE'  => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'kea'    => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'kk'     => array(
-			'name' => 'Kazakh - Қазақша',
+			'title' => 'Kazakh - Қазақша', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'kn'     => array(
-			'name' => 'Kannada - ಕನ್ನಡ',
+			'title' => 'Kannada - ಕನ್ನಡ', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'ko_KR'  => array(
-			'name' => 'Korean - 한국어',
+			'title' => 'Korean - 한국어', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'ku'     => array(
-			'name' => 'Kurdish(Sorany) وۆردپرێس بەکوردی',
+			'title' => 'Kurdish(Sorany) وۆردپرێس بەکوردی', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'ky_KY'  => array(
-			'name' => 'Kyrgyz - Кыргызча',
+			'title' => 'Kyrgyz - Кыргызча', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'la'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'li'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'lo'     => array(
-			'name' => 'Lao - ພາສາລາວ',
+			'title' => 'Lao - ພາສາລາວ', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'lv'     => array(
-			'name' => 'Latvian (Latviešu)',
+			'title' => 'Latvian (Latviešu)', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'me_ME'  => array(
-			'name' => 'Montenegrin - Crnogorski jezik',
+			'title' => 'Montenegrin - Crnogorski jezik', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'mg_MG'  => array(
-			'name' => 'Malagasy - Malagasy',
+			'title' => 'Malagasy - Malagasy', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'mk_MK'  => array(
-			'name' => 'Macedonian - Македонски',
+			'title' => 'Macedonian - Македонски', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'ml_IN'  => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'mn'     => array(
-			'name' => 'Mongolian - (Монгол хэл)',
+			'title' => 'Mongolian - (Монгол хэл)', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'mr'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'mri'    => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'ms_MY'  => array(
-			'name' => 'Malay – Bahasa Melayu',
+			'title' => 'Malay – Bahasa Melayu', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/my.gif',
 		),
 		'my_MM'  => array(
-			'name' => 'Burmese - ဗမာစာ',
+			'title' => 'Burmese - ဗမာစာ', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'nb_NO'  => array(
-			'name' => 'Norwegian - Bokmål',
+			'title' => 'Norwegian - Bokmål', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'ne_NP'  => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'nl'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'nl_BE'  => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'nl_NL'  => array(
-			'name' => 'Dutch - Nederlands',
+			'title' => 'Dutch - Nederlands', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/nl.gif',
 		),
 		'nn_NO'  => array(
-			'name' => 'Norwegian - Nynorsk',
+			'title' => 'Norwegian - Nynorsk', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'os'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'pa_IN'  => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'pl_PL'  => array(
-			'name' => 'Polish - Polski',
+			'title' => 'Polish - Polski', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/pl.gif',
 		),
 	//		'pot'    => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'pt_BR'  => array(
-			'name' => 'Portuguese - Brazilian Portuguese',
+			'title' => 'Portuguese - Brazilian Portuguese', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'pt_PT'  => array(
-			'name' => 'Portuguese - European Portuguese',
+			'title' => 'Portuguese - European Portuguese', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/pt.gif',
 		),
 		'ro_RO'  => array(
-			'name' => 'Romanian - Română',
+			'title' => 'Romanian - Română', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'ru_RU'  => array(
-			'name' => 'Russian — Русский',
+			'title' => 'Russian — Русский', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'ru_UA'  => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'sa_IN'  => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'sd_PK'  => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'si_LK'  => array(
-			'name' => 'Sinhala - සිංහල',
+			'title' => 'Sinhala - සිංහල', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'sk_SK'  => array(
-			'name' => 'Slovak – Slovenčina',
+			'title' => 'Slovak – Slovenčina', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'sl_SI'  => array(
-			'name' => 'Slovenian - Slovenščina',
+			'title' => 'Slovenian - Slovenščina', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'so_SO'  => array(
-			'name' => 'Somali - Afsoomaali',
+			'title' => 'Somali - Afsoomaali', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'sq'     => array(
-			'name' => 'Albanian - Shqip',
+			'title' => 'Albanian - Shqip', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'sr_RS'  => array(
-			'name' => 'Serbian - Српски',
+			'title' => 'Serbian - Српски', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'srd'    => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'su_ID'  => array(
-			'name' => 'Sundanese - Basa Sunda',
+			'title' => 'Sundanese - Basa Sunda', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'sv_SE'  => array(
-			'name' => 'Swedish - Svenska',
+			'title' => 'Swedish - Svenska', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'sw'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'ta_IN'  => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'ta_LK'  => array(
-			'name' => 'Sri Lanka- இலங்கைத் தமிழ்',
+			'title' => 'Sri Lanka- இலங்கைத் தமிழ்', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'te'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'tg'     => array(
-			'name' => 'Tajik',
+			'title' => 'Tajik', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'th'     => array(
-			'name' => 'Thai - ไทย',
+			'title' => 'Thai - ไทย', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'tl'     => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'tr_TR'  => array(
-			'name' => 'Turkish - Türkçe',
+			'title' => 'Turkish - Türkçe', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 	//		'tuk'    => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 	//		'tzm'    => array(
-	//			'name' => '',
+	//			'title' => '', 'name' => '',
 	//			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 	//		),
 		'ug_CN'  => array(
-			'name' => 'Uighur - ئۇيغۇرچە',
+			'title' => 'Uighur - ئۇيغۇرچە', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'uk'     => array(
-			'name' => 'Ukrainian - Українська',
+			'title' => 'Ukrainian - Українська', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'ur'     => array(
-			'name' => 'Urdu - اردو',
+			'title' => 'Urdu - اردو', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'uz_UZ'  => array(
-			'name' => 'Uzbek - O‘zbekcha',
+			'title' => 'Uzbek - O‘zbekcha', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'vi'     => array(
-			'name' => 'Vietnamese - Tiếng Việt',
+			'title' => 'Vietnamese - Tiếng Việt', 'name' => '',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/unknown.gif',
 		),
 		'zh_CN'  => array(
-			'name' => 'Chinese - 中文',
+			'title' => 'Chinese - 中文', 'name' => '中文',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/cn.gif',
 			'date_format' => 'Y年n月j日', 'time_format' => 'g:i A',
 		),
 		'zh_HK'  => array(
-			'name' => 'Hong Kong (香港)',
+			'title' => 'Hong Kong (香港)', 'name' => '繁体中文',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/hk.gif',
 		),
 		'zh_TW'  => array(
-			'name' => 'Taiwan (台灣)',
+			'title' => 'Taiwan (台灣)', 'name' => '繁体中文',
 			'flag' => trailingslashit( SP_INC_URI ) . 'multilingual/images/flags/tw.gif',
 		),
 	),

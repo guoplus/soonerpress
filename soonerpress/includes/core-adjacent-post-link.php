@@ -6,6 +6,8 @@
  * @subpackage Core
  */
 
+if ( ! defined( 'IN_SP' ) ) exit;
+
 
 /*
 Plugin Name: Ambrosite Next/Previous Post Link Plus
